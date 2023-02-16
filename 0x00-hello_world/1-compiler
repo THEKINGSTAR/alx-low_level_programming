@@ -1,2 +1,3 @@
 #!/bin/bash
-gcc -c -nolibc $CFIL -o  $CFIL tr '.c' '.o'
+gcc -c $CFIL -o $($CFIL).o
+
