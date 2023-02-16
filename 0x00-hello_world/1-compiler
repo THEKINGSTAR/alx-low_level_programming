@@ -1,2 +1,2 @@
 #!/bin/bash
-$CFIL -o   $CFIL tr '.c' '.o'
+gcc -c $CFIL -o  $CFIL tr '.c' '.o'
