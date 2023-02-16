@@ -1,0 +1,2 @@
+#!/bin/bash
+$CFIL -o   $CFIL tr '.c' '.o'
