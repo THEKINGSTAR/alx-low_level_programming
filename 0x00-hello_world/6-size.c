@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <float.h>
 /**
 * main - Entry point
 *
@@ -16,7 +18,7 @@ char charType;
 printf("Size of char: %ld byte(s)\n", sizeof(charType));
 printf("Size of int: %ld bytes(s)\n", sizeof(integerType));
 printf("Size of long int: %ld bytes(s)\n", sizeof(longType));
-printf("Size of long long: %ld bytes(s)\n", sizeof(longlongType));
+printf("Size of long long: %ld bytes(s)\n", sizeof(long long int));
 printf("Size of float: %ld bytes(s)\n", sizeof(floatType));
 return (0);
 
