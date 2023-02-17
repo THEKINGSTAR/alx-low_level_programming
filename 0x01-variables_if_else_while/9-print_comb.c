@@ -16,9 +16,11 @@ for (ch = 0 ; ch <= 9 ; ch++)
 ch = ch % 100;
 ch = ch % 10;
 putchar(ch + '0');
-putchar(32);
 if (ch != 9)
+{
 putchar(44);
+putchar(32);
+}
 }
 ch = '\n';
 putchar (ch);
