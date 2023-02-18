@@ -39,7 +39,7 @@ int main(void)
                         putchar(32);
 
                         putchar(ch3 + '0');
-                        putchar(ch3 + '0');
+                        putchar(ch4 + '0');
 
                             putchar(44);
                             putchar(32);
