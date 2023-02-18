@@ -17,7 +17,7 @@ int main(void)
         {
             for (ch3=0 ; ch3 < 10; ch3++)
             {
-                for (ch4=ch3+1; ch4 < 10; ch4++)
+                for (ch4=0; ch4 < 10; ch4++)
                 {
 
                         ch1 = ch1 % 100;
