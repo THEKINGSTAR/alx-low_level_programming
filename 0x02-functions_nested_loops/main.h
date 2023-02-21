@@ -1,7 +1,8 @@
-#ifndef HEADER_FILE
-#define HEADER_FIEL
+#ifndef HEADER_putchar
+#define HEADER_putchar
 
-#include "_putchar.c"
+
+int _putchar(char c);
 
 
 #endif
