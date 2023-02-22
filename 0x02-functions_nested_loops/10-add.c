@@ -1,13 +1,13 @@
-#include <unistd.h> 
+#include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * add - Check Holberton
+ * @a: An integer a
+ * @b: An integer b
+ * Description: Function that adds two integers and returns the result
+ * Return: Result to add a and b
  */
-int _putchar(char c)
+int add(int a, int b)
 {
-	return (write(1, &c, 1));
+	return (a + b);
 }
