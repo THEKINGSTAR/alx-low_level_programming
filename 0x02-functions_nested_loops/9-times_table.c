@@ -1,68 +1,41 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
- *  times_table- output function
- *
- * Description :'Write a function that prints the 9 times table,
- * starting with 0.'
- *
- * Return: function has no return values
+ * times_table - Check description
+ * Description: It prints 9 times table starting with 0
+ * Return: Nothing.
  */
 void times_table(void)
 {
-	int ones, multi;
+	int i, j, n;
 
-	for (ones = 0; ones < 10; ones++)
+	for (i = 0; i <= 9; i++)
 	{
-		int tens;
-
-		for (tens = 0; tens < 10; tens++)
+		for (j = 0; j <= 9; j++)
 		{
-			multi = ones * tens;
-			if (multi < 10)
+			n = i * j;
+
+			if ((n / 10) == 0)
 			{
-				if (multi == 0 && (ones == 0 || tens == 0))
-				{
-					_putchar(multi % 10 + '0');
-					if (tens < 9)
-					{
-						if (ones == 0)
-						{
-							_putchar(',');
-							_putchar(' ');
-							_putchar(' ');
-						}
-						else if (tens == 0)
-						{
-							_putchar(',');
-						}
-					}
-				}
-				else if (multi < 10 && tens < 9)
-				{
+				if (j != 0)
 					_putchar(' ');
-					_putchar(' ');
-					_putchar(multi % 10 + '0');
-					_putchar(',');
-				}
-				else if (multi == 9 && tens == 9)
-				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(multi % 10 + '0');
-				}
-			}
-			else if (multi > 9)
-			{
+				_putchar(n + '0');
+
+				if (j == 9)
+					continue;
+				_putchar(',');
 				_putchar(' ');
-				_putchar(multi / 10 + '0');
-				_putchar(multi % 10 + '0');
-				if (tens < 9)
-				{
-					_putchar(',');
-				}
+			}
+			else
+			{
+				_putchar((n / 10) + '0');
+				_putchar((n % 10) + '0');
+				if (j == 9)
+					continue;
+				_putchar(',');
+				_putchar(' ');
 			}
 		}
 		_putchar('\n');
 	}
 }
-
