@@ -20,31 +20,49 @@ void times_table(void)
 			multi = ones * tens;
 			if (multi < 10)
 			{
-			 _putchar(multi % 10 + '0');
-			 
-			 if (multi <10 && tens < 9 )
-	                        {
-                	                _putchar(',');
-					_putchar('.');
-					if (multi > 4 && ( ones >4 || tens > 4) )
+				if (multi == 0 && (ones ==0 || tens ==0))
+				{
+				_putchar(multi % 10 + '0');
+				if(tens<9)
+				{
+					if(ones == 0 )
 					{
-						continue;
-					}
+					_putchar(',');
 					_putchar('.');
+					_putchar('.');
+					}
+					else if (tens ==0)
+					{
+					_putchar(',');
+					}
+				}
+				}
+			 
+				 else if (multi <10 && tens < 9 )
+	                        {
+                	                _putchar('.');
+					_putchar('.');
+					_putchar(multi % 10 + '0');
+					_putchar(',');
 					
         	               }
+				else if (multi == 9 && tens == 9)
+				{
+					_putchar('.');
+					_putchar('.');
+					_putchar(multi %10+'0');
+				}
 			 
 			 
 			}
 			else if (multi > 9)
 			{
-				
+				_putchar('.');		
 				_putchar(multi / 10 + '0');
 				_putchar(multi % 10 + '0');
 				 if ( tens < 9 )
 				 {	
         	                        _putchar(',');
-					_putchar('.');
 					
 			         }
 			}
