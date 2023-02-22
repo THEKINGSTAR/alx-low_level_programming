@@ -18,18 +18,27 @@ void times_table(void)
 		for (tens = 0 ; tens < 10 ; tens++)
 		{
 			multi = ones * tens;
-			if (multi <= 9)
+			if (multi < 10)
 			{
-			/* _putchar(' '); */
-			_putchar(multi + '0');
+			 _putchar(multi % 10 + '0');
+			 if (tens < 9 )
+	                        {
+                	                _putchar(',');
+        	                }
+			 _putchar(' ');
+			 _putchar(' ');
 			}
 			else if (multi > 9)
 			{
 				_putchar(multi / 10 + '0');
 				_putchar(multi % 10 + '0');
+				 if (tens < 9 )
+				 {	
+        	                        _putchar(',');
+					_putchar(' ');
+			         }
 			}
-			_putchar(',');
-			_putchar(' ');
+			
 		}
 		_putchar('\n');
 	}
