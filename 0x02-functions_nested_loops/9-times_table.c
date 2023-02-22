@@ -21,21 +21,31 @@ void times_table(void)
 			if (multi < 10)
 			{
 			 _putchar(multi % 10 + '0');
-			 if (tens < 9 )
+			 
+			 if (multi <10 && tens < 9 )
 	                        {
                 	                _putchar(',');
-        	                }
-			 _putchar(' ');
-			 _putchar(' ');
+					_putchar('.');
+					if (multi > 4 && ( ones >4 || tens > 4) )
+					{
+						continue;
+					}
+					_putchar('.');
+					
+        	               }
+			 
+			 
 			}
 			else if (multi > 9)
 			{
+				
 				_putchar(multi / 10 + '0');
 				_putchar(multi % 10 + '0');
-				 if (tens < 9 )
+				 if ( tens < 9 )
 				 {	
         	                        _putchar(',');
-					_putchar(' ');
+					_putchar('.');
+					
 			         }
 			}
 			
