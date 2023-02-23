@@ -3,11 +3,13 @@
 /* more headers goes there */
 #include "main.h"
 /**
-* main - Entry point
+* positive_or_negative - cheknumber
+* @n: 'input number'
 *
-* Description: 'the program's description'
+* Description:'check the number
+* is it positive or negatinve'
 *
-* Return: Always 0 (Success)
+* Return: 'function has no return values'
 */
 void positive_or_negative(int n)
 {
