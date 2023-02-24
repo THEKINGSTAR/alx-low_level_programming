@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* print_diagonal - output dunction
+* print_triangle - output dunction
 *
 * @size : the size of the triangle
 * Description:'that prints a triangle, followed by a new line.'
@@ -18,7 +18,7 @@ void print_triangle(int size)
 	else if (n > 0)
 	{
 		int l;
-		int i,s,p = n;
+		int i, s, p = n;
 
 		for (l = 1; l <= n; l++)
 		{
@@ -29,10 +29,9 @@ void print_triangle(int size)
 			}
 			p--;
 			for (s = 0; s < l; s++)
-                        {
-                                _putchar('#');
-                        }
-
+			{
+				_putchar('#');
+			}
 			_putchar('\n');
 
 		}
