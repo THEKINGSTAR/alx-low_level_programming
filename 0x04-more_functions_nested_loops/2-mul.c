@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * add - Check Holberton
+ * mul - Check Holberton
  * @a: An integer a
  * @b: An integer b
- * Description: Function that multiply two integers 
+ * Description: Function that multiply two integers
  * and returns the result
  * Return: Result to multiply a and b
  */
