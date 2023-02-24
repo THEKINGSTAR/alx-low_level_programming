@@ -18,10 +18,10 @@ void print_triangle(int size)
 	else if (n > 0)
 	{
 		int l;
+		int i,s,p = n;
 
 		for (l = 1; l <= n; l++)
 		{
-			int i,s,p = n;
 
 			for (i = 0; i <= p; i++)
 			{
