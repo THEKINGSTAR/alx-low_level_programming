@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* print_number - output dunction
+* print_numbers - output dunction
 *
 * Description:: 'function to print the number
 * *asseending order for 0 to 9 and print new line '
