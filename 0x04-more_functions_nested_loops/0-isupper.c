@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*_isalpha - output function
+*_isupper - output function
 *@c: An input character
 * Description:'function to check if the curters is upercase or not'
 *
