@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-* print_number - output dunction
+* more_numbers - output dunction
 *
 * Description:: 'function to print the number
-* *asseending order for 0 to 14 ten times 
+* *asseending order for 0 to 14 ten times
 * and print new line '
 *
 * Return: function has no return values
@@ -11,7 +11,7 @@
 void more_numbers(void)
 {
 	int n;
-	
+
 	for (n = 0; n < 10; n++)
 	{
 		int j;
@@ -26,5 +26,5 @@ void more_numbers(void)
 		}
 		_putchar('\n');
 	}
-	
+
 }
