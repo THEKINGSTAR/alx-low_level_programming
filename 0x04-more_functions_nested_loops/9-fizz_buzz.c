@@ -41,7 +41,7 @@ void fizz_buzz(void)
 		{
 			printf("Fizz ");
 		}
-		else if (n % 6 == 0)
+		else if (n % 5 == 0)
 		{
 			printf("Buzz ");
 		}
