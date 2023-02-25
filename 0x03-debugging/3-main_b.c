@@ -15,7 +15,7 @@ int main(void)
 
     month = 02;
     day = 29;
-    year = 2000;
+    year = 2012;
 
     printf("Date: %02d/%02d/%04d\n", month, day, year);
 
