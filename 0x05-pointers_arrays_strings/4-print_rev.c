@@ -2,20 +2,20 @@
 /**
  *  _strlen - output function
  *
- * @s: the input string
+ * @cs: the input string
  *
  * Description:'Write a function that returns the length of a string.'
  *
  * Return: function has no return values
  */
-int _strlen(char *s)
+int _strlen(char *cs)
 {
 	int len = 0;
 
-	while (*s != '\0')
+	while (*cs != '\0')
 	{
-		++s;
 		len++;
+		cs++;
 	}
 	return (len);
 }
@@ -32,13 +32,12 @@ int _strlen(char *s)
 void print_rev(char *s)
 {
 	int string_len = _strlen(s);
-	char	*reverse;
+	/* char	reverse; */
 
-	while (string_len + 1 != 0)
+	for (; string_len >= 0 ; --string_len)
 	{
-		reverse = s + string_len;
-		putchar(*reverse);
-		--string_len;
+		/* reverse = s + string_len; */
+		putchar(s[string_len]);
 	}
 	putchar('\n');
 }
