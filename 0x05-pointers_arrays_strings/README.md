@@ -1,8 +1,8 @@
 # 0x05. C - Pointers, arrays and strings
 
 
-![alt text](https://github.com/THEKINGSTAR/alx-low_level_programming/0x05-pointers_arrays_strings/blob/main/image.jpg?raw=true)
-
+![alt text](https://github.com/THEKINGSTAR/alx-low_level_programming/blob/main/0x05-pointers_arrays_strings/image.jpg?raw=true)
+https://github.com/THEKINGSTAR/alx-low_level_programming/blob/main/0x05-pointers_arrays_strings/image.jpg
 
 ## Resources
 ### Read or watch:
