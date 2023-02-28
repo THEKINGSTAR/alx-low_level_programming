@@ -32,14 +32,14 @@ int _strlen(char *s)
  */
 void puts_half(char *str)
 {
-	int st_len = _strlen(str) ;
+	int st_len = _strlen(str) - 1 ;
 
 	int half;
 
 	if (st_len % 2 == 0)
 		half = st_len / 2;
 	else if (st_len % 2 != 0)
-		half = (st_len / 2) + 1;
+		half = (st_len - 1) / 2;
 
 	while (half <= st_len)
 	{
