@@ -40,10 +40,10 @@ char *_strcpy(char *dest, char *src)
 	{
 		dest[i] = src[i];
 	}
-	
-	for ( ; i < len; i++)
-	{
-		dest[i] = '\0';
-	}
+	while (i < len)
+		{
+			dest[i] = '\0';
+			i++;
+		}
 	return (dest);
 }
