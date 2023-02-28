@@ -36,7 +36,7 @@ void puts2(char *str)
 	int i;
 
 	i = 0;
-	while (i <= st_len)
+	while (i < st_len)
 	{
 		putchar(str[i]);
 		i += 2;
