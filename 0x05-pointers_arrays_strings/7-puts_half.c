@@ -32,7 +32,7 @@ int _strlen(char *s)
  */
 void puts_half(char *str)
 {
-	int st_len = _strlen(str) - 1;
+	int st_len = _strlen(str) ;
 
 	int half;
 
@@ -41,7 +41,7 @@ void puts_half(char *str)
 	else if (st_len % 2 != 0)
 		half = (st_len / 2) + 1;
 
-	while (half != st_len + 1)
+	while (half <= st_len)
 	{
 		putchar(str[half++]);
 	}
