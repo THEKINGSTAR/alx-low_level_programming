@@ -12,10 +12,9 @@ int _strlen(char *cs)
 {
 	int len = 0;
 
-	while (*cs != '\0')
+	while (cs[len] != '\0')
 	{
 		len++;
-		cs++;
 	}
 	return (len);
 }
@@ -34,10 +33,11 @@ void print_rev(char *s)
 	int string_len = _strlen(s);
 	/* char	reverse; */
 
-	for (; string_len >= 0 ; --string_len)
+	while (string_len)
 	{
 		/* reverse = s + string_len; */
-		putchar(s[string_len]);
+		--string_len;
+		_putchar(s[string_len]);
 	}
 	putchar('\n');
 }
