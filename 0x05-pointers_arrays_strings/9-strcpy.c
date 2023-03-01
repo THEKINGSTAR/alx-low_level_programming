@@ -34,9 +34,12 @@ char *_strcpy(char *dest, char *src)
 {
 	char *ret = dest;
 
-	while (*src)
+	if (*src != '\0')
 	{
-		*dest++ = *src++;
+		while (*src)
+		{
+			*dest++ = *src++;
+		}
 	}
 	return (ret);
 }
