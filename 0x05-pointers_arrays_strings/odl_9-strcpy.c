@@ -32,10 +32,18 @@ int _strlen(char *cs)
  */
 char *_strcpy(char *dest, char *src)
 {
-	char *ret = dest;
-	while(*src != '\0')
+	int len = _strlen(src);
+
+	int i;
+
+	for (i = 0; i < len && src[i] != '\0'; i++)
 	{
-		*dest++ = *src++;
+		dest[i] = src[i];
 	}
-	return (ret);
+	while (i < len)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
