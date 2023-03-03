@@ -38,7 +38,8 @@ int _strcmp(char *s1, char *s2)
 {
 	int s1_len;
 	int s2_len;
-	int i, s1v, s2v, result;
+	int i, s1v, s2v;
+	int result;
 
 	s1_len = _strlen(s1);
 	s2_len = _strlen(s2);
@@ -55,9 +56,9 @@ int _strcmp(char *s1, char *s2)
 	if (s1v == s2v)
 		result = 0;
 	else if (s1v > s2v)
-		result = 15;
+		result = (*s1 - *s2);
 	else if (s1v < s2v)
-		result = -15;
+		result = (*s1 - *s2);
 	/**
 	 * printf("%i\n",s1v);
 	 * printf("%i\n",s2v);
