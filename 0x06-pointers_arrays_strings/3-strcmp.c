@@ -55,9 +55,9 @@ int _strcmp(char *s1, char *s2)
 	if (s1v == s2v)
 		result = 0;
 	else if (s1v > s2v)
-		result = 1;
+		result = 15;
 	else if (s1v < s2v)
-		result = -1;
+		result = -15;
 	/**
 	 * printf("%i\n",s1v);
 	 * printf("%i\n",s2v);
