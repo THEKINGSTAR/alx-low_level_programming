@@ -23,14 +23,14 @@ char *leet(char *s)
 	char *coded = s;
 	int i;
 	char cha[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	int cod[]  = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
+	int cod[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 
 	while (*s)
 	{
-		if (*s == 'a' || *s == 'A' || *s == 'e'	|| *s == 'E' || *s == 'O'
-			|| *s == 'o' || *s == 't' || *s == 'T' || *s == 'l' || *s == 'L')
+		if (*s == 'a' || *s == 'A' || *s == 'e' || *s == 'E' || *s == 'O'
+				|| *s == 'o' || *s == 't' || *s == 'T' || *s == 'l' || *s == 'L')
 		{
-		       i = 0;
+			i = 0;
 			while (*s != cha[i])
 			{
 				i++;
@@ -39,5 +39,5 @@ char *leet(char *s)
 		}
 		s++;
 	}
-	return (coded);
+return (coded);
 }
