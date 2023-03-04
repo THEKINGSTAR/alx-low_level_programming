@@ -31,21 +31,21 @@ char *cap_string(char *s)
 			else
 				continue;
 		}
-		else if (*s =='\n')
+		else if (*s == '\n')
 		{
 			s++;
 			if (*s >= 'a' && *s <= 'z')
-                        {
-                                *s = *s - 32;
-                        }
+			{
+				*s = *s - 32;
+			}
 		}
 		else if (*s == '\t')
 		{
 			s++;
 			if (*s >= 'a' && *s <= 'z')
-                        {
-                                *s = *s - 32;
-                        }	
+			{
+				*s = *s - 32;
+			}
 		}
 		s++;
 	}
