@@ -27,16 +27,8 @@ char *leet(char *s)
 
 	while (*s)
 	{
-		if (*s == 'a' || *s == 'A' || *s == 'e' || *s == 'E' || *s == 'O')
-		{
-			i = 0;
-			while (*s != cha[i])
-			{
-				i++;
-			}
-			*s = cod[i];
-		}
-		else if (*s == 'o' || *s == 't' || *s == 'T' || *s == 'l' || *s == 'L')
+		if (*s == 'a' || *s == 'A' || *s == 'e' || *s == 'E' || *s == 'O'
+				|| *s == 'o' || *s == 't' || *s == 'T' || *s == 'l' || *s == 'L')
 		{
 			i = 0;
 			while (*s != cha[i])
