@@ -28,7 +28,24 @@ char *cap_string(char *s)
 			{
 				*s = *s - 32;
 			}
-			continue;
+			else
+				continue;
+		}
+		else if (*s =='\n')
+		{
+			s++;
+			if (*s >= 'a' && *s <= 'z')
+                        {
+                                *s = *s - 32;
+                        }
+		}
+		else if (*s == '\t')
+		{
+			s++;
+			if (*s >= 'a' && *s <= 'z')
+                        {
+                                *s = *s - 32;
+                        }	
 		}
 		s++;
 	}
