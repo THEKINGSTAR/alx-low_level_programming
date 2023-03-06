@@ -1,6 +1,6 @@
 # 0x07. C - Even more pointers, arrays and strings
 
-![alt text](https://github.com/THEKINGSTAR/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/image.png?raw=true)
+![alt text](https://github.com/THEKINGSTAR/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/img.jpg?raw=true)
 ## Resources
 ### Read or watch:
 
