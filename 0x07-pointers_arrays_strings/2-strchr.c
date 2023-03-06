@@ -29,6 +29,6 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 
-	return (ptr);
+	return (NULL);
 
 }
