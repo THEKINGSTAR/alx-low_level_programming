@@ -18,16 +18,18 @@ char *_strchr(char *s, char c)
 {
 	char *ptr;
 
-	while (*s)
+	while (*s != '\0')
 	{
-		if (*s == c)
+		if (c == *s)
 		{
 			ptr = s;
 			return (ptr);
 		}
 		s++;
 	}
-	ptr = s--;
-	return (ptr);
-
+	if (c == *s)
+	{
+		return (s);
+	}
+	return (NULL);
 }
