@@ -18,7 +18,6 @@ char *_strchr(char *s, char c)
 {
 	char *ptr;
 
-	ptr = '\0';
 	while (*s)
 	{
 		if (*s == c)
@@ -28,7 +27,7 @@ char *_strchr(char *s, char c)
 		}
 		s++;
 	}
-
-	return (s);
+	ptr = s--;
+	return (ptr);
 
 }
