@@ -18,8 +18,10 @@ void revers(char *s)
 	{
 		ptr++;
 		revers(ptr);
-		putchar(*ptr);
-		return;
+		if (*ptr != '\n')
+			putchar(*ptr);
+		else
+			return;
 	}
 }
 
