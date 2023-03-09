@@ -40,9 +40,13 @@ int _sqrt_recursion(int n)
 	int sroot;
 
 	sroot = 1;
-	if (sroot < n)
+	if (sroot < n && !(n < 0))
 	{
 		sroot = root_calculate(sroot, n);
+	}
+	else if (n < 0)
+	{
+		sroot = -1;
 	}
 	return (sroot);
 }
