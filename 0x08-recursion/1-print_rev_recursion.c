@@ -16,12 +16,8 @@ void revers(char *s)
 	ptr = s;
 	if (*ptr != '\0')
 	{
-		ptr++;
-		revers(ptr);
-		if (*ptr != '\n')
-			putchar(*ptr);
-		else
-			return;
+		revers(ptr + 1);
+		putchar(*ptr);
 	}
 }
 
@@ -50,7 +46,6 @@ void _print_rev_recursion(char *s)
 	 *	}
 	 */
 	revers(s);
-	putchar('\n');
 }
 
 
