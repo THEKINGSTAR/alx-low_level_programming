@@ -9,7 +9,7 @@
  */
 int main(int argc, char **argv)
 {
-	int i, sum, num;
+	int i, sum, num, error;
 
 	if (argc > 1)
 	{
@@ -20,12 +20,17 @@ int main(int argc, char **argv)
 			sum += num;
 		}
 		printf("%d\n", sum);
+		error = 0;
+	}
+	else if (argc == 2)
+	{
+		printf("0\n");
+		error = 0;
 	}
 	else
 	{
-		printf("0\n");
-		return (1);
+		error = 1;
 	}
 
-	return (0);
+	return (error);
 }
