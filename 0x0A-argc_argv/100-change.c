@@ -65,7 +65,7 @@ int main(int argc, char **argv)
 {
 	int remnd;
 
-	if (argc != 1)
+	if (argc < 2)
 	{
 		printf("Error\n");
 	}
