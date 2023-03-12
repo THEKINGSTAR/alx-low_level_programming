@@ -14,25 +14,28 @@ int main(int argc, char **argv)
 	if (argc > 1)
 	{
 		sum = 0;
-		for (i = 0; i < argc; i++)
+		for (i = 1; i < argc; i++)
 		{
 			num = atoi(argv[i]);
 			digit = num;
-			while (digit)
+			
+			while (digit != '\0')
 			{
 				dig = digit % 10;
-				if (!(isdigit(dig)))
+				
+				printf("%d\n",dig);
+
+				if (!(isalnum(dig)))
 				{
 					printf("Error\n");
 					error = 1;
 					return (error);
 				}
 				else
-				{
-					sum += num;
-				}
-				digit = digit / 10;
+					digit = digit / 10;
 			}
+
+			sum += num;
 		}
 		printf("%d\n", sum);
 		error = 0;
