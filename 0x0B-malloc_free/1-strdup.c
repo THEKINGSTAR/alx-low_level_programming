@@ -44,7 +44,7 @@ char *_strdup(char *str)
 	int i;
 	char *ptr;
 
-	if (len <= 0)
+	if (len <= 0 || str == NULL)
 	{
 		ptr = NULL;
 	}
