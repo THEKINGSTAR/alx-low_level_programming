@@ -32,16 +32,11 @@
 	else if (*str != '\0')
 	{
 		i = 0;
-		while (*str != '\0')
-		{
-			i++;
-			str++;
-		}
 		ptr = malloc(sizeof(char) * i);
-		while(i > 0)
+		while(str[i] != '\0')
 		{
-			ptr [i] = str[i];	
-			i--;
+			ptr[i] = str[i];	
+			i++;
 		}
 	}
 	return (ptr);
