@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * strdup - copy string
+ * _strdup - copy string
  *
- * @string: the input strin 
- *
+ * @str: the input string
  *
  * Description:'Write a function that returns a pointer to
  * a newly allocated space in memory,
@@ -12,7 +11,8 @@
  * Prototype: char *_strdup(char *str);
  * The _strdup() function returns a pointer to a new string
  * which is a duplicate of the string str.
- * Memory for the new string is obtained with malloc, and can be freed with free.
+ * Memory for the new string is obtained with malloc,
+ * and can be freed with free.
  *
  * Return: Returns NULL if str = NULL
  * On success, the _strdup function returns a pointer to the duplicated string.
@@ -20,7 +20,7 @@
  *
  */
 
- char *_strdup(char *str)
+char *_strdup(char *str)
 {
 	char *ptr;
 	int i;
@@ -33,9 +33,9 @@
 	{
 		i = 0;
 		ptr = malloc(sizeof(char) * i);
-		while(str[i] != '\0')
+		while (str[i] != '\0')
 		{
-			ptr[i] = str[i];	
+			ptr[i] = str[i];
 			i++;
 		}
 	}
