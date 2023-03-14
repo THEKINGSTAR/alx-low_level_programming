@@ -44,11 +44,11 @@ char *_strdup(char *str)
 	int i;
 	char *ptr;
 
-	if (*str == '\0')
+	if (len <= 0)
 	{
 		ptr = NULL;
 	}
-	else
+	else if (len > 0)
 	{
 		ptr = malloc(sizeof(char) * len);
 		for (i = 0; i < len && str[i] != '\0'; i++)
@@ -60,6 +60,10 @@ char *_strdup(char *str)
 			ptr[i] = '\0';
 			i++;
 		}
+	}
+	else
+	{
+		ptr = NULL;
 	}
 	return (ptr);
 	free(ptr);
