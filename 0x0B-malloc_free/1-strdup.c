@@ -1,4 +1,23 @@
 #include "main.h"
+/**
+ *  _strlen - output function
+ *
+ * @cs: the input string
+ *
+ * Description:'Write a function that returns the length of a string.'
+ *
+ * Return: function has no return values
+ */
+int _strlen(char *cs)
+{
+	int len = 0;
+
+	while (cs[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
+}
 
 /**
  * _strdup - copy string
@@ -19,26 +38,30 @@
  * It returns NULL if insufficient memory was available.
  *
  */
-
 char *_strdup(char *str)
 {
-	char *ptr;
+	int len = _strlen(str);
 	int i;
+	char *ptr;
 
 	if (*str == '\0')
 	{
 		ptr = NULL;
 	}
-	else if (*str != '\0')
+	else
 	{
-		i = 0;
-		ptr = malloc(sizeof(char) * i);
-		while (str[i] != '\0')
+		ptr = malloc(sizeof(char) * len);
+		for (i = 0; i < len && str[i] != '\0'; i++)
 		{
 			ptr[i] = str[i];
+		}
+		while (i < len)
+		{
+			ptr[i] = '\0';
 			i++;
 		}
 	}
 	return (ptr);
 	free(ptr);
+
 }

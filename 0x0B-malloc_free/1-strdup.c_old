@@ -1,0 +1,32 @@
+/*
+char *_strdup(char *str)
+{
+        char *ptr,psiz;
+        int i,size;
+
+        if (*str == '\0')
+        {
+                ptr = NULL;
+        }
+        else if (*str)
+        {
+                *psiz = *str;
+                while(*psiz != NULL)
+                {
+                        ++psiz;
+                        size++;
+                }
+                i = 0;
+                 ptr = malloc(sizeof(char) * size);
+                        while (str[i] != '\0')
+                        {
+                                ptr = malloc(sizeof(char));
+                                ptr[i] = str[i];
+                                i++;
+                        }
+
+        }
+        return (ptr);
+        free(ptr);
+}
+*/
