@@ -27,11 +27,17 @@ char *create_array(unsigned int size, char c)
 		char *arr;
 
 		arsiz = size;
-		arr = malloc(sizeof(char) * arsiz);
-		ptr = arr;
-		for (i = 0; i < arsiz ; i++)
+		if ((arr = malloc(sizeof(char) * arsiz)))
 		{
-			arr[i] = c;
+			ptr = arr;
+			for (i = 0; i < arsiz ; i++)
+			{
+				arr[i] = c;
+			}
+		}
+		else
+		{
+			ptr = NULL;
 		}
 	}
 	else
