@@ -44,7 +44,7 @@ char *_strdup(char *str)
 	int i;
 	char *ptr;
 	
-	if (len <= 0)
+	if (len <= 0 || str == NULL)
         {
                 ptr = NULL;
         }
@@ -52,8 +52,13 @@ char *_strdup(char *str)
         {
                 char *newstr;
 
-                newstr = malloc(sizeof(char) * len);
-                if (newstr)
+                newstr = malloc(sizeof(char) * (len + 1));
+
+		if (newstr == NULL)
+		{
+			ptr = NULL;
+		}
+		else if (newstr)
                 {
                         ptr = newstr;
                         for (i = 0; i < len ; i++)
