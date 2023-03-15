@@ -7,12 +7,16 @@
  *
  * Return: Always 0.
  */
-/*
+
 int main(void)
 {
     char *s;
 
-    s = _strdup("ALX SE");
+    /* s = _strdup("ALX SE"); */
+    /* s =_strdup("Holberton School!"); */
+    /* s = _strdup(""); */
+    s = _strdup("First, solve the problem. Then, write the code.");
+
     if (s == NULL)
     {
         printf("failed to allocate memory\n");
@@ -22,18 +26,14 @@ int main(void)
     free(s);
     return (0);
 }
-*/
-#include <stdio.h>
-#include <stdlib.h>
 
-char *_strdup(char *str);
 
 /**
  * main - check the code .
  *
  * Return: Always 0.
  */
-
+/*
 int main(void)
 {
 	char *s;
@@ -47,3 +47,4 @@ int main(void)
 	free(s);
 	return (0);
 }
+*/
