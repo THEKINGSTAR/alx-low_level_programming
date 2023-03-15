@@ -43,25 +43,33 @@ char *_strdup(char *str)
 	int len = _strlen(str);
 	int i;
 	char *ptr;
+	
+	if (len <= 0)
+        {
+                ptr = NULL;
+        }
+        else if (len > 0)
+        {
+                char *newstr;
 
-	if (str)
-	{
-		ptr = malloc(sizeof(char) * (len + 1));
-		for (i = 0; i < len && str[i] != '\0'; i++)
-		{
-			ptr[i] = str[i];
-		}
-		while (i < len)
-		{
-			ptr[i] = '\0';
-			i++;
-		}
-	}
-	else
-	{
-		ptr = NULL;
-	}
+                newstr = malloc(sizeof(char) * len);
+                if (newstr)
+                {
+                        ptr = newstr;
+                        for (i = 0; i < len ; i++)
+                        {
+                                newstr[i] = str[i];
+                        }
+                }
+                else
+                {
+                        ptr = NULL;
+                }
+        }
+        else
+        {
+                ptr =  NULL;
+        }
 	return (ptr);
 	free(ptr);
-
 }
