@@ -2,7 +2,7 @@
 /**
  *  _strlen - output function
  *
- * @cs: the input string
+ * @crs: the input string
  *
  * Description:'Write a function that returns the length of a string.'
  *
@@ -48,30 +48,30 @@ char *_strdup(char *str)
 	char *ptr;
 
 	if (str == NULL)
-        {
-		return(NULL);
-        }
-	else
-        {
-                char *newstr;
+	{
+		return (NULL);
+	}
+	else if (str)
+	{
+		char *newstr;
 
-                newstr = malloc(sizeof(char) * (len + 1));
+		newstr = malloc(sizeof(char) * (len + 1));
 		if (newstr != NULL)
-                {
-                        ptr = newstr;
-                        for (i = 0; i < len ; i++)
-                        {
-                                newstr[i] = str[i];
-                        }
+		{
+			ptr = newstr;
+			for (i = 0; i < len ; i++)
+			{
+				newstr[i] = str[i];
+			}
 			newstr[i] = '\0';
 			return (ptr);
-                }
-                else
-                {
-                        ptr = NULL;
+		}
+		else
+		{
+			ptr = NULL;
 			return (ptr);
-                }
-        }
-        return (NULL);
+		}
+	}
+	return (NULL);
 	free(ptr);
 }
