@@ -8,10 +8,13 @@
  *
  * Return: function has no return values
  */
-int _strlen(char *cs)
+int _strlen(char *crs)
 {
 	int len = 0;
+	char *cs;
 
+
+	cs = crs;
 	while (cs[len] != '\0')
 	{
 		len++;
@@ -43,38 +46,32 @@ char *_strdup(char *str)
 	int len = _strlen(str);
 	int i;
 	char *ptr;
-	
-	if (len <= 0 || str == NULL)
+
+	if (str == NULL)
         {
-                ptr = NULL;
+		return(NULL);
         }
-        else if (len > 0)
+	else
         {
                 char *newstr;
 
                 newstr = malloc(sizeof(char) * (len + 1));
-
-		if (newstr == NULL)
-		{
-			ptr = NULL;
-		}
-		else if (newstr)
+		if (newstr != NULL)
                 {
                         ptr = newstr;
                         for (i = 0; i < len ; i++)
                         {
                                 newstr[i] = str[i];
                         }
+			newstr[i] = '\0';
+			return (ptr);
                 }
                 else
                 {
                         ptr = NULL;
+			return (ptr);
                 }
         }
-        else
-        {
-                ptr =  NULL;
-        }
-	return (ptr);
+        return (NULL);
 	free(ptr);
 }
