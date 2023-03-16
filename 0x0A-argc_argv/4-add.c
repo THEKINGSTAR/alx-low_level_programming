@@ -9,18 +9,33 @@
  */
 int main(int argc, char **argv)
 {
-	int i, sum, num, error;
+	int i, ac, sum, num, error;
 
 	if (argc > 1)
 	{
 		sum = 0;
-		for (i = 0; i < argc; i++)
+		for (i = 1; i < argc && error != 1; i++)
 		{
+			ac = 0;
+			while (argv[i][ac] != '\0')
+			{
+				if (argv[i][ac] < 48 || argv[i][ac] > 47)
+				error = 1;
+				ac++;
+			}
 			num = atoi(argv[i]);
 			sum += num;
 		}
-		printf("%d\n", sum);
-		error = 0;
+		if (error != 1)
+		{
+			printf("%d\n", sum);
+			error = 0;
+		}
+		else
+		{
+			printf("Error\n");
+			error = 1;
+		}
 	}
 	else if (argc == 1)
 	{
@@ -32,6 +47,5 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		error = 1;
 	}
-
 	return (error);
 }
