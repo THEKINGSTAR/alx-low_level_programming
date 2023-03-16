@@ -46,7 +46,7 @@ char *str_concat(char *s1, char *s2)
 	char *ptr;
 	char *newstr;
 
-	newstr = malloc((sizeof(char) * (len1 + 1)) + (sizeof(char) * (len2 + 1)));
+	newstr = malloc((sizeof(char) * (len1)) + (sizeof(char) * (len2 + 1)));
 	if (newstr == NULL)
 	{
 		return (NULL);
