@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 			ac = 0;
 			while (argv[i][ac] != '\0')
 			{
-				if (argv[i][ac] < 48 || argv[i][ac] > 47)
+				if (argv[i][ac] != 32 && (argv[i][ac] < 48 || argv[i][ac] > 57))
 				error = 1;
 				ac++;
 			}
