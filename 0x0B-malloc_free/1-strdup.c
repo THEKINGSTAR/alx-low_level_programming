@@ -43,20 +43,23 @@ int _strlen(char *crs)
  */
 char *_strdup(char *str)
 {
-	int len = _strlen(str);
-	int i;
-	char *ptr;
-
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	else if (str)
+	else
 	{
+		int len = _strlen(str);
+		int i;
+		char *ptr;
 		char *newstr;
 
 		newstr = malloc(sizeof(char) * (len + 1));
-		if (newstr != NULL)
+		if (newstr == NULL)
+		{
+			return (NULL);
+		}
+		else
 		{
 			ptr = newstr;
 			for (i = 0; i < len ; i++)
@@ -65,13 +68,8 @@ char *_strdup(char *str)
 			}
 			newstr[i] = '\0';
 			return (ptr);
-		}
-		else
-		{
-			ptr = NULL;
-			return (ptr);
+			free(ptr);
 		}
 	}
 	return (NULL);
-	free(ptr);
 }

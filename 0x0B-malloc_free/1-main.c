@@ -14,8 +14,8 @@ int main(void)
 
     /* s = _strdup("ALX SE"); */
     /* s =_strdup("Holberton School!"); */
-    /* s = _strdup(""); */
-    s = _strdup("First, solve the problem. Then, write the code."); 
+     s = _strdup(""); 
+    /* s = _strdup("First, solve the problem. Then, write the code."); */ 
     /* s = _strdup(""); */
 
     if (s == NULL)
