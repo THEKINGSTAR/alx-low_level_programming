@@ -41,10 +41,21 @@ int _strlen(char *crs)
  */
 char *str_concat(char *s1, char *s2)
 {
-	int len1 = _strlen(s1), len2 = _strlen(s2);
-	int i, i2;
-	char *ptr;
-	char *newstr;
+	int len1, len2, i, i2;
+	char *ptr, *newstr;
+
+	if (s1 == NULL)
+	len1 = 0;
+	else
+	{
+		len1 = _strlen(s1);
+	}
+	if (s2 == NULL)
+	len2 = 0;
+	else
+	{
+		len2 = _strlen(s2);
+	}
 
 	newstr = malloc((sizeof(char) * (len1)) + (sizeof(char) * (len2 + 1)));
 	if (newstr == NULL)
