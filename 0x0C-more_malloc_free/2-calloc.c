@@ -18,30 +18,18 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *ptr;
+	void *arr;
 
 	if (size <= 0 || nmemb <= 0)
 	{
-		ptr = NULL;
+		return (NULL);
 	}
-	else if (size > 0)
+	
+	arr = malloc(size * nmemb);
+	if (!arr)
 	{
-		int *arr;
-
-		arr = malloc(sizeof(size) * nmemb);
-		if (arr)
-		{
-			ptr = arr;
-		}
-		else
-		{
-			ptr = NULL;
-		}
+		return (NULL);
 	}
-	else
-	{
-		ptr =  NULL;
-	}
-	return (ptr);
-	free(ptr);
+	return (arr);
+	free(arr);
 }
