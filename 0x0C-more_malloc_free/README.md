@@ -49,7 +49,7 @@
 * Prototype: void *malloc_checked(unsigned int b);
 * Returns a pointer to the allocated memory
 * if malloc fails, the malloc_checked function should cause normal process termination with a status value of 98
-```
+```c
 julien@ubuntu:~/0x0b. more malloc, free$ cat 0-main.c
 #include "main.h"
 #include <stdio.h>
@@ -105,7 +105,7 @@ julien@ubuntu:~/0x0b. more malloc, free$
 * If the function fails, it should return NULL
 * If n is greater or equal to the length of s2 then use the entire string s2
 * if NULL is passed, treat it as an empty string
-```
+```c
 julien@ubuntu:~/0x0b. more malloc, free$ cat 1-main.c
 #include "main.h"
 #include <stdio.h>
@@ -146,7 +146,7 @@ julien@ubuntu:~/0x0b. more malloc, free$
 * If malloc fails, then _calloc returns NULL
 * FYI: The standard library provides a different function: calloc. Run man calloc to learn more.
 
-```
+```c
 julien@ubuntu:~/0x0b. more malloc, free$ cat 2-main.c
 #include "main.h"
 #include <stdio.h>
@@ -226,7 +226,7 @@ julien@ubuntu:~/0x0b. more malloc, free$
 * Return: the pointer to the newly created array
 * If min > max, return NULL
 * If malloc fails, return NULL
-```
+```c
 julien@ubuntu:~/0x0b. more malloc, free$ cat 3-main.c
 #include "main.h"
 #include <stdio.h>
