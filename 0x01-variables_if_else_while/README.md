@@ -65,7 +65,7 @@ All your files should end with a new line
 * if the number is 0: is zero
 * if the number is less than 0: is negative
 * followed by a new line
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-positive_or_negative.c -o 0-positive_or_negative
 julien@ubuntu:~/0x01$ ./0-positive_or_negative 
 -520693284 is negative
@@ -106,7 +106,7 @@ You don’t have to understand what rand, srand, and RAND_MAX do. Please do not 
 * if the last digit of n is 0: the string and is 0
 * if the last digit of n is less than 6 and not 0: the string and is less than 6 and not 0
 * followed by a new line
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-last_digit.c -o 1-last_digit
 julien@ubuntu:~/0x01$ ./1-last_digit 
 Last digit of 629438752 is 2 and is less than 6 and not 0
@@ -149,7 +149,7 @@ julien@ubuntu:~/0x01$
 * You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
 * All your code should be in the main function
 * You can only use putchar twice in your code
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-print_alphabet.c -o 2-print_alphabet
 julien@ubuntu:~/0x01$ ./2-print_alphabet 
 abcdefghijklmnopqrstuvwxyz
@@ -168,7 +168,7 @@ julien@ubuntu:~/0x01$
 * You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
 * All your code should be in the main function
 * You can only use putchar three times in your code
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-print_alphabets.c -o 3-print_alphabets
 julien@ubuntu:~/0x01$ ./3-print_alphabets | cat -e
 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$
@@ -189,7 +189,7 @@ Print all the letters except q and e
 You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
 All your code should be in the main function
 You can only use putchar twice in your code
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-print_alphabt.c -o 4-print_alphabt
 julien@ubuntu:~/0x01$ ./4-print_alphabt 
 abcdfghijklmnoprstuvwxyz
@@ -208,7 +208,7 @@ Score: 100.0% (Checks completed: 100.0%)
 Write a program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
 
 All your code should be in the main function
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-print_numbers.c -o 5-print_numbers
 julien@ubuntu:~/0x01$ ./5-print_numbers 
 0123456789
@@ -229,7 +229,7 @@ You are not allowed to use any variable of type char
 You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
 You can only use putchar twice in your code
 All your code should be in the main function
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 6-print_numberz.c -o 6-print_numberz
 julien@ubuntu:~/0x01$ ./6-print_numberz 
 0123456789
@@ -248,7 +248,7 @@ julien@ubuntu:~/0x01$
 You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
 All your code should be in the main function
 You can only use putchar twice in your code
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 7-print_tebahpla.c -o 7-print_tebahpla
 julien@ubuntu:~/0x01$ ./7-print_tebahpla
 zyxwvutsrqponmlkjihgfedcba
@@ -268,7 +268,7 @@ Write a program that prints all the numbers of base 16 in lowercase, followed by
 You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
 All your code should be in the main function
 You can only use putchar three times in your code
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 8-print_base16.c -o 8-print_base16
 julien@ubuntu:~/0x01$ ./8-print_base16
 0123456789abcdef
@@ -291,7 +291,7 @@ julien@ubuntu:~/0x01$
 * All your code should be in the main function
 * You can only use putchar four times maximum in your code
 * You are not allowed to use any variable of type char
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 9-print_comb.c -o 9-print_comb
 julien@ubuntu:~/0x01$ ./9-print_comb | cat -e
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9$
@@ -317,7 +317,7 @@ julien@ubuntu:~/0x01$
 * You can only use putchar five times maximum in your code
 * You are not allowed to use any variable of type char
 * All your code should be in the main function
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-print_comb3.c -o 100-print_comb3
 julien@ubuntu:~/0x01$ ./100-print_comb3
 01, 02, 03, 04, 05, 06, 07, 08, 09, 12, 13, 14, 15, 16, 17, 18, 19, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 56, 57, 58, 59, 67, 68, 69, 78, 79, 89
@@ -343,7 +343,7 @@ julien@ubuntu:~/0x01$
 * You can only use putchar six times maximum in your code
 * You are not allowed to use any variable of type char
 * All your code should be in the main function
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 101-print_comb4.c -o 101-print_comb4
 julien@ubuntu:~/0x01$ ./101-print_comb4
 012, 013, 014, 015, 016, 017, 018, 019, 023, 024, 025, 026, 027, 028, 029, 034, 035, 036, 037, 038, 039, 045, 046, 047, 048, 049, 056, 057, 058, 059, 067, 068, 069, 078, 079, 089, 123, 124, 125, 126, 127, 128, 129, 134, 135, 136, 137, 138, 139, 145, 146, 147, 148, 149, 156, 157, 158, 159, 167, 168, 169, 178, 179, 189, 234, 235, 236, 237, 238, 239, 245, 246, 247, 248, 249, 256, 257, 258, 259, 267, 268, 269, 278, 279, 289, 345, 346, 347, 348, 349, 356, 357, 358, 359, 367, 368, 369, 378, 379, 389, 456, 457, 458, 459, 467, 468, 469, 478, 479, 489, 567, 568, 569, 578, 579, 589, 678, 679, 689, 789
@@ -370,7 +370,7 @@ julien@ubuntu:~/0x01$
 * You can only use putchar eight times maximum in your code
 * You are not allowed to use any variable of type char
 * All your code should be in the main function
-```
+```c
 julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 102-print_comb5.c -o 102-print_comb5
 julien@ubuntu:~/0x01$ ./102-print_comb5
 00 01, 00 02, 00 03, 00 04, 00 05, 00 06, 00 07, 00 08, 00 09, 00 10, 00 11, [...] 40 91, 40 92, 40 93, 40 94, 40 95, 40 96, 40 97, 40 98, 40 99, 41 42, 41 43, 41 44, 41 45, 41 46, 41 47, 41 48, 41 49, 41 50, 41 51, 41 52, 41 53 [...] 93 95, 93 96, 93 97, 93 98, 93 99, 94 95, 94 96, 94 97, 94 98, 94 99, 95 96, 95 97, 95 98, 95 99, 96 97, 96 98, 96 99, 97 98, 97 99, 98 99
