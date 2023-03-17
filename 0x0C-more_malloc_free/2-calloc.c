@@ -19,7 +19,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int *arr;
-	int i, arln = nmemb;
+	int i, arln = nmemb * size;
 
 	if (size <= 0 || nmemb <= 0)
 	{
