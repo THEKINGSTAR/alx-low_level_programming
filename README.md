@@ -55,7 +55,7 @@
 
 * A *C* program that prints exactly *"Programming is like building a multilingual puzzle, followed by a new line.*. Use the function *puts*
 * You are not allowed to use *printf*; Your program should end with the value *0* using:
-```
+```c
 #include <stdio.h>
 
 int main(void)
@@ -71,7 +71,7 @@ int main(void)
 * Your program should return *0*
 * Your program should compile without warning when using the ``` *-Wall gcc* ``` option using:
 
-```
+```c
 #include <stdio.h>
 
 int main(void)
@@ -87,7 +87,7 @@ int main(void)
 * Warnings are allowed; Your program should return *0*
 * You might have to install the package *libc6-dev-i386* on your Linux (Vagrant) to test the ``` *-m32 gcc* ``` option using:
 
-```
+```c
 #include <stdio.h>
 
 int main(void)
@@ -113,7 +113,7 @@ A script that generates the assembly code (Intel syntax) of a *C* code and save 
 
 *Example:* if the *C* file is *main.c*, the output file should be *main.s*  USING *gcc -S*
 
- ```
+ ```c
 gcc -S -masm=intel $CFILE
 ```
 
@@ -124,7 +124,7 @@ gcc -S -masm=intel $CFILE
 * Your program should return *1*
 * Your program should compile without any warnings when using the *-Wall gcc* option using:
 
-```
+```c
 #include <stdio.h>
 
 int main(void)
