@@ -2,17 +2,15 @@
 #include <stdio.h>
 
 /**
- * C program to print the name of
- * source code file
- */
-
-/**
  * main - check the code
+ *
+ * Description:C program to print the name of
+ * source code file
  *
  * Return: Always 0.
  */
 int main(void)
 {
 	printf("%s\n", __FILE__);
-	return 0;
+	return (0);
 }
