@@ -1,0 +1,19 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(int argc, char **argv)
+{
+	(void)argc;
+	int *size;
+	size = malloc(sizeof(argv[0]));
+
+	char fname[*size];
+
+	printf("%p",*fname);
+    return (0);
+}
