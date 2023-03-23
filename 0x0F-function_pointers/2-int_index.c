@@ -32,7 +32,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 		{
 			cmpval = cmp(array[i]);
 			/* printf("%d , %d \n", array[i], cmpval); */
-			if (array[i] != 0 && cmpval != 0)
+			if (i > 0 && array[i] != 0 && cmpval != 0)
 			{
 				ret = i;
 				return (ret);
