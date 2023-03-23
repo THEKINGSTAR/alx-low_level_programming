@@ -24,7 +24,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	{
 		ret = -1;
 	}
-	else
+	else if (size > 0)
 	{
 		arsiz = size;
 		/*printf("size is : %d\n", arsiz);*/
@@ -32,7 +32,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 		{
 			cmpval = cmp(array[i]);
 			/* printf("%d , %d \n", array[i], cmpval); */
-			if (i > 0 && cmpval != 0)
+			if (i > 0 && array[i] != 0 && cmpval != 0)
 			{
 				ret = i;
 				return (ret);
