@@ -19,7 +19,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i, arsiz, ret, cmpval;
 
-	ret = 0;
+	ret = -1;
 	if (array == NULL || size <= 0)
 	{
 		ret = -1;
