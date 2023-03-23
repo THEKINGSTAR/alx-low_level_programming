@@ -24,19 +24,17 @@ int int_index(int *array, int size, int (*cmp)(int))
 	{
 		ret = -1;
 	}
-	else if (size > 0)
+
+	arsiz = size;
+	/*printf("size is : %d\n", arsiz);*/
+	for (i = 0; i < arsiz; i++)
 	{
-		arsiz = size;
-		/*printf("size is : %d\n", arsiz);*/
-		for (i = 0; i < arsiz; i++)
+		cmpval = cmp(array[i]);
+		/* printf("%d , %d \n", array[i], cmpval); */
+		if (i > 0 && array[i] != 0 && cmpval != 0)
 		{
-			cmpval = cmp(array[i]);
-			/* printf("%d , %d \n", array[i], cmpval); */
-			if (i > 0 && array[i] != 0 && cmpval != 0)
-			{
-				ret = i;
-				return (ret);
-			}
+			ret = i;
+			return (ret);
 		}
 	}
 	return (ret);
