@@ -20,21 +20,23 @@ int int_index(int *array, int size, int (*cmp)(int))
 	int i, arsiz, ret, cmpval;
 
 	ret = -1;
-	if (array == NULL || size <= 0)
+	if (array == NULL || size <= 0 || cmp == NULL)
 	{
 		ret = -1;
 	}
-
-	arsiz = size;
-	/*printf("size is : %d\n", arsiz);*/
-	for (i = 0; i < arsiz; i++)
+	else if (size > 0)
 	{
-		cmpval = cmp(array[i]);
-		/* printf("%d , %d \n", array[i], cmpval); */
-		if (i > 0 && array[i] != 0 && cmpval != 0)
+		arsiz = size;
+		/*printf("size is : %d\n", arsiz);*/
+		for (i = 0; i < arsiz; i++)
 		{
-			ret = i;
-			return (ret);
+			cmpval = cmp(array[i]);
+			/* printf("%d , %d \n", array[i], cmpval); */
+			if (i > 0 && array[i] != 0 && cmpval != 0)
+			{
+				ret = i;
+				return (ret);
+			}
 		}
 	}
 	return (ret);
