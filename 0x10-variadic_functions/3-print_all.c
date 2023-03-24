@@ -32,6 +32,11 @@ void print_all(const char * const format, ...)
 
 	i = 0;
 	va_start(arg, format);
+	while (format == NULL)
+	{
+		printf("\n");
+		return ;
+	}
 	while (format[i])
 	{
 		switch (format[i])
@@ -56,7 +61,8 @@ void print_all(const char * const format, ...)
 			printf("%d", numb);
 			break;
 		}
-		if (format[i + 1] != '\0') 
+		if ((format[i] == 'c' || format[i] == 's' || format[i] == 'i' || 
+				format[i] == 'f') && (format[i + 1] != '\0')) 
 			printf(", ");
 		i++;
 	}
