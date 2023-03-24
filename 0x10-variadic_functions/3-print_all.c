@@ -37,15 +37,14 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				ch = va_arg(arg, int);
-				printf("%c", ch);
+				/* ch = va_arg(arg, int); */
+				printf("%c", va_arg(arg, int));
 				break;
 			case  's':
 				str = va_arg(arg, char*);
 				if (str == NULL || *str == '\0')
 					printf("(nill)");
 				else
-					/* str = va_arg(arg, char*); */
 					printf("%s", str);
 				break;
 			case  'i':
@@ -57,7 +56,7 @@ void print_all(const char * const format, ...)
 			printf("%d", numb);
 			break;
 		}
-		if (format[i + 1] != '\0')
+		if (format[i + 1] != '\0') 
 			printf(", ");
 		i++;
 	}
