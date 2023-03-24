@@ -28,7 +28,7 @@ void print_all(const char * const format, ...)
 {
 	va_list arg;
 	int i, numb;
-	char *str, ch;
+	char *str;
 
 	i = 0;
 	va_start(arg, format);
