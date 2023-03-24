@@ -27,7 +27,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list arg;
-	int i, numb;
+	int i;
 	char *str;
 
 	i = 0;
@@ -35,7 +35,7 @@ void print_all(const char * const format, ...)
 	while (format == NULL)
 	{
 		printf("\n");
-		return ;
+		return;
 	}
 	while (format[i])
 	{
@@ -49,20 +49,17 @@ void print_all(const char * const format, ...)
 				str = va_arg(arg, char*);
 				if (str == NULL || *str == '\0')
 					printf("(nill)");
-				else
-					printf("%s", str);
+				printf("%s", str);
 				break;
 			case  'i':
-				numb = va_arg(arg, int);
-				printf("%i", numb);
+				printf("%i", va_arg(arg, int));
 				break;
 			case 'f':
-			numb = va_arg(arg, double);
-			printf("%d", numb);
+			printf("%f", va_arg(arg, double));
 			break;
 		}
-		if ((format[i] == 'c' || format[i] == 's' || format[i] == 'i' || 
-				format[i] == 'f') && (format[i + 1] != '\0')) 
+		if ((format[i] == 'c' || format[i] == 's' || format[i] == 'i' ||
+				format[i] == 'f') && (format[i + 1] != '\0'))
 			printf(", ");
 		i++;
 	}
