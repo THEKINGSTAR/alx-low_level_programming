@@ -42,13 +42,15 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				/* ch = va_arg(arg, int); */
 				printf("%c", va_arg(arg, int));
 				break;
 			case  's':
 				str = va_arg(arg, char*);
 				if (str == NULL || *str == '\0')
+				{
 					printf("(nill)");
+					break;
+				}
 				printf("%s", str);
 				break;
 			case  'i':
