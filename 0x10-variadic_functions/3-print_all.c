@@ -3,7 +3,7 @@
 
 
 /**
- * print_strings - output function
+ * print_all - output function
  *
  * @format: is a list of types of arguments passed to the function
  *
@@ -26,28 +26,41 @@
  */
 void print_all(const char * const format, ...)
 {
-	int l, size;
 	va_list arg;
-	char *str;
+	int i, numb;
+	char *str, ch;
 
-	size = n;
-	va_start(arg, n);
-	
-	for (l = 0; l < size; l++)
+	i = 0;
+	va_start(arg, format);
+	while (format[i])
 	{
-		str = va_arg(arg, char *);
-		if (str == NULL || *str == '\0')
+		switch (format[i])
 		{
-			printf("(nill)");
+			case 'c':
+				ch = va_arg(arg, int);
+				printf("%c", ch);
+				break;
+			case  's':
+				str = va_arg(arg, char*);
+				if (str == NULL || *str == '\0')
+					printf("(nill)");
+				else
+					/* str = va_arg(arg, char*); */
+					printf("%s", str);
+				break;
+			case  'i':
+				numb = va_arg(arg, int);
+				printf("%i", numb);
+				break;
+			case 'f':
+			numb = va_arg(arg, double);
+			printf("%d", numb);
+			break;
 		}
-		else
-			printf("%s", str);
-
-		if (separator != NULL && l != (size - 1))
-		{
-			printf("%s", separator);
-		}
-		va_end(arg);
+		if (format[i + 1] != '\0')
+			printf(", ");
+		i++;
 	}
+	va_end(arg);
 	printf("\n");
 }
