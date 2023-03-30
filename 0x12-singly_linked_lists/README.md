@@ -1,5 +1,6 @@
 # 0x12. C - Singly linked lists
 # C
+![alt text](https://github.com/THEKINGSTAR/alx-low_level_programming/blob/main/0x12-singly_linked_lists/giphy-3.gif?raw=true)
 ## Algorithm
 ## Concepts
 ### For this project, we expect you to look at this concept:
