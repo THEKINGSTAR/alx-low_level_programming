@@ -33,7 +33,7 @@ size_t print_list(const list_t *head)
 			}
 			else
 			{
-				printf("[%u] %s\n", head->len, head->str);
+				printf("[%i] %s\n", head->len, head->str);
 				size++;
 			}
 			head = head->next;
