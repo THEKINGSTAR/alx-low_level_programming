@@ -15,19 +15,14 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	int i = 0;
+	int i = 0, length = 0;
 	list_t *new, *current_node;
 
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
-	{
-		return (NULL);
-	}
+	{ return (NULL); }
 	else
 	{
-		/* Count the length of the input string */
-		int length = 0;
-
 		while (str[length] != '\0')
 		{
 			length++;
@@ -45,19 +40,15 @@ list_t *add_node_end(list_t **head, const char *str)
 			i++;
 		}
 		new->str[length] = '\0';
-		new->len = length;
-		new->next = NULL;
+		new->len = length, new->next = NULL;
 		if (*head == NULL)
-		{
-			*head = new;
-		}
+		{ *head = new; }
 		else
 		{
 			current_node = *head;
-
 			while (current_node->next != NULL)
 			{
-				current_node = current_node->next ;
+				current_node = current_node->next;
 			}
 			current_node->next = new;
 		}
