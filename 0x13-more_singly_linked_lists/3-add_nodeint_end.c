@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * listint_t *add_nodeint - count function
+ * listint_t *add_nodeint_end - count function
  *
  * Description: Write a function that adds
  * a new node at the end of a listint_t list.
