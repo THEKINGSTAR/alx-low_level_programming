@@ -31,4 +31,5 @@ void free_listint(listint_t *head)
 		head = current;
 		free(head);
 	}
+	free(end);
 }
