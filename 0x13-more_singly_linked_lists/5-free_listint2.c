@@ -1,11 +1,12 @@
 #include "lists.h"
 
 /**
- * free_listint - count function
+ * free_listint2 - count function
  *
- * Description:Write a function that frees a listint_t list.
+ * Description: Write a function that frees a listint_t list.
+ * The function sets the head to NULL
  *
- * Prototype: void free_listint(listint_t *head);
+ * Prototype: void free_listint2(listint_t **head);
  *
  * @head: input list structure
  *
@@ -13,7 +14,7 @@
  *
  *
  */
-void free_listint(listint_t *head)
+void free_listint2(listint_t **head)
 {
 	 listint_t *end, *current;
 
@@ -22,13 +23,13 @@ void free_listint(listint_t *head)
 		return;
 	}
 
-	end = head;
+	end = *head;
 	while (end->next != NULL)
 	{
 		current = end;
 		end = end->next;
-		head = current;
-		free(head);
+		*head = current;
+		free(*head);
 	}
 	free(end);
 }
