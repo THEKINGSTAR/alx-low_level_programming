@@ -32,5 +32,5 @@ void free_listint2(listint_t **head)
 		free(*head);
 	}
 	free(end);
-	head = NULL;
+	*head = NULL;
 }
