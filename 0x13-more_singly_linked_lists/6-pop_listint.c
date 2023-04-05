@@ -16,34 +16,25 @@
  */
 int pop_listint(listint_t **head)
 {
-	listint_t *end, *current;
-	
+	int n = 0;
+	listint_t *end;
+
+	if (*head == NULL)
+	{
+		return (n);
+	}
 	end = malloc(sizeof(listint_t));
-	
 	if (end == NULL)
 	{
 		free(end);
-		return (0);
+		return (n);
 	}
 	else if (end != NULL)
 	{
-		end->n = n;
-		end->next = NULL;
-
-		if (*head == NULL)
-		{
-			*head = end;
-		}
-		else
-		{
-			current = *head;
-			while (current->next != NULL)
-			{
-				current = current->next;
-			}
-			current->next = end;
-		}
+		end->next = (*head)->next;
+		end->n = (*head)->n;
+		n = (*head)->n;
+		*head = end;
 	}
-	end = *head;
-	return (end->n);
+	return (n);
 }
