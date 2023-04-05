@@ -22,17 +22,24 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	listint_t *current;
 
-	current = head;
-	while (ind < index)
+	if (head == NULL)
 	{
-		current = current->next;
-		if (current != NULL)
-		{ 
-			ind++;
-		}
-		else
+		return (NULL);
+	}
+	else
+	{
+		current = head;
+		while (ind < index)
 		{
-			return (NULL);
+			current = current->next;
+			if (current != NULL)
+			{
+				ind++;
+			}
+			else
+			{
+				return (NULL);
+			}
 		}
 	}
 	return (current);
