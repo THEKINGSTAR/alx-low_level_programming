@@ -31,10 +31,11 @@ int pop_listint(listint_t **head)
 	}
 	else if (nhd != NULL)
 	{
-		nhd = (*head)->next;
+		nhd = (*head);
 		n = nhd->n;
 
-		head = nhd;
+		*head = (*head)->next;
+		free(nhd);
 	}
 	return (n);
 }
