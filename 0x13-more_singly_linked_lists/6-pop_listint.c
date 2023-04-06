@@ -23,19 +23,12 @@ int pop_listint(listint_t **head)
 	{
 		return (n);
 	}
-	nhd = malloc(sizeof(listint_t));
-	if (nhd == NULL)
+	else if (*head != NULL)
 	{
-		free(nhd);
-		return (n);
-	}
-	else if (nhd != NULL)
-	{
-		nhd = (*head);
-		n = nhd->n;
-
-		*head = (*head)->next;
-		free(nhd);
+		nhd = (*head)->next;
+		n = (*head)->n;
+		free(*head);
+		*head = nhd;
 	}
 	return (n);
 }
