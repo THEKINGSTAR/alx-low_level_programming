@@ -32,7 +32,7 @@ int pop_listint(listint_t **head)
 	else if (nhd != NULL)
 	{
 		nhd = (*head)->next;
-		n = (*head)->n;
+		n = nhd->n;
 	}
 	return (n);
 }
