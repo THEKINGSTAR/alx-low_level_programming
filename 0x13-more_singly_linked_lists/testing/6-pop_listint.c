@@ -33,6 +33,7 @@ int pop_listint(listint_t **head)
 	{
 		nhd = (*head)->next;
 		n = (*head)->n;
+		free(nhd);
 	}
 	return (n);
 }
