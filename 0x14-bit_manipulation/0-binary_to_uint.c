@@ -51,27 +51,31 @@ unsigned int binary_to_uint(const char *b)
 	tmp = b;
 
 	if (*b == '\0')
+	{
 		return (0);
-
-	while (*tmp++ != '\0')
-	{
-		len++;
 	}
-	/* printf("Len : %d\n", len); */
-	while (len)
+	else
 	{
-		dig = (*(b + len - 1) - '0');
-		/* printf("Dig : %d\n", dig); */
-		if (dig >= 0 && dig <= 9)
+		while (*tmp++ != '\0')
 		{
-			/* printf("%d :: %d\n" , num, conv); */
-			conv += (dig * power(2, l));
-			l++;
-			len--;
+			len++;
 		}
-		else
+		/* printf("Len : %d\n", len); */
+		while (len)
 		{
-			return (0);
+			dig = (*(b + len - 1) - '0');
+			/* printf("Dig : %d\n", dig); */
+			if (dig >= 0 && dig <= 9)
+			{
+				/* printf("%d :: %d\n" , num, conv); */
+				conv += (dig * power(2, l));
+				l++;
+				len--;
+			}
+			else
+			{
+				return (0);
+			}
 		}
 	}
 	return (conv);

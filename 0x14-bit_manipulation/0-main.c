@@ -25,6 +25,13 @@ int main(void)
     printf("%u\n", n);
     n = binary_to_uint("");
     printf("%u\n", n);
+    /*
+    n = binary_to_uint(NULL);
+    printf("%u\n", n);
+    */
+
+
+
 
     return (0);
 }
