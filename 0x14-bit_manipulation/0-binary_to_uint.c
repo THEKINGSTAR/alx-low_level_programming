@@ -49,8 +49,7 @@ unsigned int binary_to_uint(const char *b)
 	const char *tmp;
 
 	tmp = b;
-
-	if (*b == '\0')
+	if (*b == '\0' || b == NULL)
 	{
 		return (0);
 	}
