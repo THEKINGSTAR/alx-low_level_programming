@@ -29,6 +29,9 @@ int main(void)
     n = binary_to_uint("10101010");
     printf("%u\n", n);
 
+    n = binary_to_uint("100112885011");
+    printf("%u\n", n);
+
 
 
 

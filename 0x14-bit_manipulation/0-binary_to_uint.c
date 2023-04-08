@@ -64,7 +64,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			dig = (b[len - 1] - '0');
 			/* printf("Dig : %d\n", dig); */
-			if (dig >= 0 && dig <= 9)
+			if (dig >= 0 && dig <= 1)
 			{
 				/* printf("%d :: %d\n" , num, conv); */
 				conv += (dig * power(2, l));
