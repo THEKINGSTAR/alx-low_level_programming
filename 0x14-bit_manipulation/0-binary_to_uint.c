@@ -62,7 +62,7 @@ unsigned int binary_to_uint(const char *b)
 		/* printf("Len : %d\n", len); */
 		while (len)
 		{
-			dig = (*(b + len - 1) - '0');
+			dig = (b[len - 1] - '0');
 			/* printf("Dig : %d\n", dig); */
 			if (dig >= 0 && dig <= 9)
 			{
