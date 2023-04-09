@@ -27,7 +27,7 @@
 * There should be no errors and no warnings during compilation
 * You are not allowed to use system
 * Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-# -----------------------------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------
 * [0x00. C - Hello, World](./0x00-hello_world)
 * [0x01. C - Variables, if, else, while](./0x01-variables_if_else_while)
 * [0x02. C - Functions, nested loops](./0x02-functions_nested_loops)
@@ -50,7 +50,7 @@
 * [0x13-more_singly_linked_lists](./0x13-more_singly_linked_lists)
 * [0x14-bit_manipulation](0x14-bit_manipulation)
 * [0x15-file_io](0x15-file_io)
-# -------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------
 
 
 
