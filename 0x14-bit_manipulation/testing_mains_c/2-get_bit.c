@@ -17,14 +17,20 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	/*creating musk wit the */
-	int mask, bit;
-
-	mask = (n >> index);
-	/* printf("mask : %d\n", mask); */
-
-	bit = mask & 1;
-	/* printf("bit : %d\n",bit); */
-
-	return (bit);
+	if (n == '\0' || !n)
+	{
+		return (-1);
+	}
+	else
+	{
+		/*creating musk wit the */
+		int mask, bit;
+		
+		mask = (n >> index);
+		/* printf("mask : %d\n", mask); */
+		bit = mask & 1;
+		/* printf("bit : %d\n",bit); */
+		return (bit);
+	}
+	return (-1);
 }
