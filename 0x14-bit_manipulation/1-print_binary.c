@@ -34,7 +34,7 @@ void print_binary(unsigned long int num)
 			if (bit || !lead_zro)
 			{
 				/* if the bit is 1 or leading zeros have been printed */
-				printf("%d", bit);			/* print the bit */
+				_putchar(bit + '0');			/* print the bit */
 				lead_zro = 0;			/* clear the leading_zero flag */
 			}
 		}
@@ -46,7 +46,7 @@ void print_binary(unsigned long int num)
 	if (lead_zro)
 	{
 		/* if num is 0, print a single 0 */
-		printf("0");
+		_putchar(0 + '0');
 	}
 }
 /**
