@@ -29,11 +29,18 @@ void print_binary(unsigned long int num)
 	{
 		int bit = (num >> i) & 1;	/* extract the i-th bit from num */
 
-		if (bit || !lead_zro)
+		if (bit == 0 || bit == 1)
 		{
-			/* if the bit is 1 or leading zeros have been printed */
-			printf("%d", bit);			/* print the bit */
-			lead_zro = 0;			/* clear the leading_zero flag */
+			if (bit || !lead_zro)
+			{
+				/* if the bit is 1 or leading zeros have been printed */
+				printf("%d", bit);			/* print the bit */
+				lead_zro = 0;			/* clear the leading_zero flag */
+			}
+		}
+		else
+		{
+			return;
 		}
 	}
 	if (lead_zro)
