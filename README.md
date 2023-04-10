@@ -1,4 +1,4 @@
-# **C - Hello, World**
+# C 
 ![alt text](https://github.com/THEKINGSTAR/alx-low_level_programming/blob/main/c.jpg?raw=true)
 
 ## General
