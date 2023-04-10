@@ -96,7 +96,10 @@ Peace, Peace, she cannot hear
 Lyre or sonnet,
 All my life's buried here,
 Heap earth upon it.
+
 julien@ubuntu:~/0x15. File descriptors and permissions$ cat 0-main.c
+```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
