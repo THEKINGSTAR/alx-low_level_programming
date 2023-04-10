@@ -67,7 +67,7 @@
 >- if filename is NULL return 0
 >- if write fails or does not write the expected amount of bytes, return 0
 
-```c
+```
 julien@ubuntu:~/0x15. File descriptors and permissions$ cat Requiescat 
 Requiescat
 by Oscar Wilde
@@ -124,6 +124,8 @@ int main(int ac, char **av)
     printf("\n(printed chars: %li)\n", n);
     return (0);
 }
+```
+```
 julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-read_textfile.c -o a
 julien@ubuntu:~/0x15. File descriptors and permissions$ ./a Requiescat 
 Requiescat
