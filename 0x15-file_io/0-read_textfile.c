@@ -25,10 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int count = 0;
 
 	file = fopen(filename, "r");
-	c = fgetc(file);
-	if (!file || !c)
-		return (count);
-	else if (file == NULL)
+	if (!file || file == NULL)
 	{
 		return (count);
 	}
@@ -38,8 +35,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		{
 			c = fgetc(file);
 			if (c != EOF)
+			{
+				count++;
 				printf("%c", c);
-			count++;
+			}
 		}
 		fclose(file);
 		return (count);
