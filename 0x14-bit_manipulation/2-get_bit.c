@@ -20,7 +20,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	/*creating musk wit the */
 	int mask, bit;
 
-	if (n == '\0' || !n)
+	if (n == '\0' || !n || sizeof(n) * 8 < index)
 	{
 		return (-1);
 	}
