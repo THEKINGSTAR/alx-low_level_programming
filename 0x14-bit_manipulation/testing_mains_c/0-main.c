@@ -35,6 +35,12 @@ int main(void)
     n = binary_to_uint("1001111111111111000000000000000001111111111111111100000000111");
     printf("%u\n", n);
 
+     n = binary_to_uint("0");
+     printf("%u\n", n);
+     
+     n = binary_to_uint("1");
+     printf("%u\n", n);
+
 
 
 
