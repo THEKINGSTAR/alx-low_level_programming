@@ -85,5 +85,5 @@ unsigned int binary_to_uint(const char *b)
 		}
 		return (conv);
 	}
-	exit(0);
+	return (0);
 }
