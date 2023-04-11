@@ -60,8 +60,6 @@ unsigned int binary_to_uint(const char *b)
 		{
 			len++;
 		}
-		if (len > 510)
-		{ return(0); }
 		/* printf("Len : %d\n", len); */
 		while (len)
 		{
