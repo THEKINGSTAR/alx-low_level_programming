@@ -38,9 +38,11 @@ unsigned int power(unsigned int base, unsigned int degree)
  *
  * @b:where b is pointing to a string of 0 and 1 chars
  *
- * Return: the converted number, or 0 if
+ * Return: the converted number,
+ * or 0 if
  * there is one or more chars in the string b that is not 0 or 1
  * b is NULL
+ *
  */
 unsigned int binary_to_uint(const char *b)
 {
@@ -48,11 +50,10 @@ unsigned int binary_to_uint(const char *b)
 	int l = 0, len = 0, dig;
 	const char *tmp;
 
+	/* printf("the input STRING is %s \n", b); */
 	tmp = b;
 	if (*b == '\0' || b == NULL)
-	{
-		return (0);
-	}
+	{	return (0);	}
 	else
 	{
 		while (*tmp++ != '\0')
@@ -67,10 +68,12 @@ unsigned int binary_to_uint(const char *b)
 			if (dig == 0 || dig == 1)
 			{
 				/* printf("%d :: %d\n" , num, conv); */
-				/* conv += (dig * power(2, l)); */
-				dig = dig >> 1;
-				dig = dig & 1;
-				conv += dig;
+				conv += (dig * power(2, l));
+				/*
+				 * dig = dig >> 1;
+				 * dig = dig & 1;
+				 * conv += dig;
+				 */
 				l++;
 				len--;
 			}
@@ -79,6 +82,7 @@ unsigned int binary_to_uint(const char *b)
 				return (0);
 			}
 		}
+		return (conv);
 	}
-	return (conv);
+	exit(0);
 }
