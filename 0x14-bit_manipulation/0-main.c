@@ -47,6 +47,10 @@ int main(void)
      printf("%u\n", n);
 
 
+	n = binary_to_uint("10111010011001101");
+	printf("main # 8 :%u\n", n);
+
+
 
 
 

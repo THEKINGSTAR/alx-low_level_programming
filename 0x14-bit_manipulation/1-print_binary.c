@@ -22,7 +22,8 @@
 void print_binary(unsigned long int num)
 {
 	int i;
-	int size = sizeof(unsigned int) * 8;	/* number of bits in an unsigned int */
+	 /* number of bits in an unsigned int */
+	unsigned long int size = sizeof(unsigned long int) * 8;
 	int lead_zro = 1;			/* flag to track if leading zeros have been printed */
 
 	for (i = size - 1; i >= 0; i--)
