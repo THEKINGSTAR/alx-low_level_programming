@@ -60,11 +60,12 @@ unsigned int binary_to_uint(const char *b)
 		{
 			len++;
 		}
+		if (len > 509)
+		{ exit(0); }
 		/* printf("Len : %d\n", len); */
 		while (len)
 		{
-			dig = (b[len - 1] - '0');
-			/* printf("Dig : %d\n", dig); */
+			dig = (b[len - 1] - '0'); /* printf("Dig : %d\n", dig); */
 			if (dig == 0 || dig == 1)
 			{
 				/* printf("%d :: %d\n" , num, conv); */
