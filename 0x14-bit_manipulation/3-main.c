@@ -9,6 +9,7 @@
 int main(void)
 {
     unsigned long int n;
+     unsigned long int nb = 2048;
 
     n = 1024;
     set_bit(&n, 5);
@@ -19,5 +20,9 @@ int main(void)
     n = 98;
     set_bit(&n, 0);
     printf("%lu\n", n);
+
+    n = set_bit(&nb, 2000);
+    printf("nb:%lu\nret:%ld\n", nb, n);
+
     return (0);
 }
