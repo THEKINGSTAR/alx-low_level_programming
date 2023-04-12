@@ -52,7 +52,7 @@ unsigned int binary_to_uint(const char *b)
 
 	/* printf("the input STRING is %s \n", b); */
 	tmp = b;
-	if (*b == '\0' || b == NULL)
+	if (b == NULL)
 	{	return (0);	}
 	else
 	{
