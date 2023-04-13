@@ -26,7 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	file = fopen(filename, "r");
 
-	if (!file || file == NULL)
+	if (!file || file == NULL || !letters || letters == 0)
 	{
 		return (count);
 	}
