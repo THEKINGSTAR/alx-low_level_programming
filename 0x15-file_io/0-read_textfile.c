@@ -30,7 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (count);
 	}
-	else if (letters != 0)
+	else if (letters > 0)
 	{
 		while ((letters-- > 0 && c != EOF) || !letters)
 		{
