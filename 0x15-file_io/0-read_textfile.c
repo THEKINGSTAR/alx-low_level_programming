@@ -22,7 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *file;
 	char c;
-	int count = 0;
+	unsigned long int count = 0;
 
 	file = fopen(filename, "r");
 
@@ -30,9 +30,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (count);
 	}
-	else if (letters > 0)
+	else
 	{
-		while ((letters-- > 0 && c != EOF) || !letters)
+		while ((letters-- && c != EOF) || !letters)
 		{
 			c = fgetc(file);
 			if (c != EOF)
@@ -43,5 +43,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		}
 		fclose(file);
 	}
+	if (count < letters)
+		return (0);
 	return (count);
 }
