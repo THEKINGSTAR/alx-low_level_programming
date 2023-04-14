@@ -6,9 +6,12 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
+/*****************************************************************************/
 
+/*****************************************************************************/
+/*********************---TESTING ONLY FUNCTIONS!!!----************************/
+/*****************************************************************************/
 int append_text_to_file(const char *file_from, const char *file_to);
-
 /**
  * append_text_to_file - reads a text file and prints
  *
@@ -84,7 +87,7 @@ int append_text_to_file(const char *file_from, const char *file_to)
 	printf("finshed good\n");
 	return (1);
 }
-
+/*****************************************************************************/
 /**
  * _main - check the code
  *
@@ -97,8 +100,6 @@ int append_text_to_file(const char *file_from, const char *file_to)
  * Return:Always 0.
  *
  */
-
-
 int _main(int argc, char **argv)
 {
 	/* int res; */
@@ -147,7 +148,7 @@ int main(int argc, char **argv)
 		 * print Usage: cp file_from file_to,
 		 * followed by a new line, on the POSIX standard error
 		 */
-		write(STDERR_FILENO, "Usage: cp file_from file_to\n", 28);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		/*  dprintf(1, "Usage: cp file_from file_to\n"); */
 		exit(97);
 	}
@@ -168,6 +169,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
+	/* if file_to already exists, truncate it */
 
 	/* Open output file for writing */
 	/*
@@ -185,17 +187,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	/*
-	 * if you can not create or if write to file_to fails,
-	 * exit with code 99
-	 * and
-	 * print Error: Can't write to NAME_OF_THE_FILE,
-	 * followed by a new line, on the POSIX standard error
-	 * where NAME_OF_THE_FILE is the second argument passed to your program
-	 */
-
 	/* Copy content of input file to output file */
-
 	ret_in = read(input_fd, &buffer, BUFSIZ);
 	while (ret_in > 0)
 	{
@@ -208,7 +200,25 @@ int main(int argc, char **argv)
 		ret_in = read(input_fd, &buffer, BUFSIZ);
 	}
 	/* Close input and output files */
-	close(input_fd);
-	close(output_fd);
+	/*
+	 * if you can not close a file descriptor,
+	 * exit with code 100
+	 * and
+	 * print Error: Can't close fd FD_VALUE,
+	 * followed by a new line, on the POSIX standard error
+	 * where FD_VALUE is the value of the file descriptor
+	 */
+	if (close(input_fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close file descriptor %d\n", input_fd);
+		exit(100);
+	}
+	if (close(output_fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close file descriptor %d\n", output_fd);
+		exit(100);
+	}
+
+
 	return (0);
 }
