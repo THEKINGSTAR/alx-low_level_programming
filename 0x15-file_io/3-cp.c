@@ -169,7 +169,6 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	/* if file_to already exists, truncate it */
 
 	/* Open output file for writing */
 	/*
@@ -181,12 +180,13 @@ int main(int argc, char **argv)
 	 * where NAME_OF_THE_FILE is the second argument passed to your program
 	 */
 	output_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
+
 	if (output_fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[3]);
 		exit(99);
 	}
-
+	/* if file_to already exists, truncate it */
 	/* Copy content of input file to output file */
 	ret_in = read(input_fd, &buffer, BUFSIZ);
 	while (ret_in > 0)
@@ -210,12 +210,12 @@ int main(int argc, char **argv)
 	 */
 	if (close(input_fd) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close file descriptor %d\n", input_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_fd);
 		exit(100);
 	}
 	if (close(output_fd) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close file descriptor %d\n", output_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", output_fd);
 		exit(100);
 	}
 
