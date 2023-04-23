@@ -1,4 +1,24 @@
 #include <stdio.h>
+/**
+*
+*
+*
+*/
+typedef struct strc_test
+{
+	int num ;
+	char * str;
+
+	strc_test *NODE;
+}
+
+
+/**
+*
+*
+* MIAN : READ THE CODE
+*
+*/
 
 int main(int argc , char ** argv)
 {
