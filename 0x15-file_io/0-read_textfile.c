@@ -32,13 +32,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	else
 	{
-		while ((letters-- && c != EOF) || !letters)
+		while (letters--)
 		{
 			c = fgetc(file);
 			if (c != EOF)
 			{
-				count++;
 				printf("%c", c);
+				count++;
 			}
 		}
 		fclose(file);
