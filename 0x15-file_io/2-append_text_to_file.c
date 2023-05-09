@@ -26,7 +26,13 @@ int _append_text_to_file(const char *filename, char *text_content)
 	char c;
 	ssize_t count = 0;
 
-	file = fopen(filename, "w");
+
+	if (filename == NULL)
+	{
+		return (-1);
+	}
+
+	file = fopen(filename, "r");
 
 	if (!file || file == NULL)
 	{
