@@ -90,8 +90,9 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd = open(filename, O_WRONLY | O_APPEND);
 	int len = strlen(text_content);
-	int num_written = write(fd, text_content, len);
+	int num_written;
 
+	/*vIf filename is NULL return -1 */
 	if (filename == NULL)
 	{
 		return (-1);
@@ -112,6 +113,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
+	num_written = write(fd, text_content, len);
 	if (num_written != len)
 	{
 		close(fd);
