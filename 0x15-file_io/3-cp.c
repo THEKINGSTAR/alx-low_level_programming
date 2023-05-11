@@ -141,7 +141,20 @@ void cp(const char *f_f, const char *f_t)
 		}
 		ret_in = read(input_fd, buffer, buf);
 	}
-	/* Close input and output files */
-	close(input_fd);
-	close(output_fd);
+	/*if you can not close a file descriptor,
+	 * exit with code 100 and 
+	 * print Error: Can't close fd FD_VALUE,
+	 * followed by a new line, 
+	 * on the POSIX standard error
+	 */
+	if (close(input_fd) == -1)
+	{
+		dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", input_fd);
+		exit(100);
+	}
+	if (close(output_fd) == -1)
+	{
+		dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", input_fd);
+		exit(100);
+	}
 }
