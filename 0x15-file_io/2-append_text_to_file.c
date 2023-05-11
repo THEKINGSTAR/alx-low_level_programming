@@ -72,52 +72,43 @@ int _append_text_to_file(const char *filename, char *text_content)
  * @text_content:is the NULL terminated string to add at the end of the file
  * @filename: is the file to read from
  *
- * Return:1 on success
- * and
- * -1 on failure
+ * Return:1 on success and -1 on failure
  * Do not create the file if it does not exist
  * If filename is NULL return -1
  * If text_content is NULL, do not add anything to the file.
- * Return
- * 1 if the file exists
- * and
- * -1 if the file does not exist
- * or
+ * Return 1 if the file exists and -1
+ * if the file does not exist or
  * if you do not have the required permissions to write the file
  *
  *
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd = open(filename, O_WRONLY | O_APPEND);
-	int len;
-	int num_written;
+	int fd, len = strlen(text_content), num_written;
 
-	/* If filename is NULL return -1 */
 	if (filename == NULL)
+	{
 		return (-1);
-
-	if (text_content == NULL)
-		return (1);
-
-	if (access(filename, F_OK) == 0)
-		return (1);
-	else
-		return (-1);
-
+	}
 	if (access(filename, W_OK) == -1)
+	{
 		return (-1);
-
+	}
+	if (text_content == NULL)
+	{
+		return (1);
+	}
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 	{
 		return (-1);
 	}
-	len = strlen(text_content);
 	num_written = write(fd, text_content, len);
 	if (num_written != len)
 	{
 		close(fd);
 		return (-1);
 	}
+	close(fd);
 	return (1);
 }
