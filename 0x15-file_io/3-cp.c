@@ -6,12 +6,9 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
-/*****************************************************************************/
 
-/*****************************************************************************/
-/*********************---TESTING ONLY FUNCTIONS!!!----************************/
-/*****************************************************************************/
 int append_text_to_file(const char *file_from, const char *file_to);
+
 /**
  * append_text_to_file - reads a text file and prints
  *
@@ -87,7 +84,7 @@ int append_text_to_file(const char *file_from, const char *file_to)
 	printf("finshed good\n");
 	return (1);
 }
-/*****************************************************************************/
+
 /**
  * _main - check the code
  *
@@ -100,6 +97,8 @@ int append_text_to_file(const char *file_from, const char *file_to)
  * Return:Always 0.
  *
  */
+
+
 int _main(int argc, char **argv)
 {
 	/* int res; */
@@ -180,14 +179,24 @@ int main(int argc, char **argv)
 	 * where NAME_OF_THE_FILE is the second argument passed to your program
 	 */
 	output_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
-
 	if (output_fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[3]);
 		exit(99);
 	}
-	/* if file_to already exists, truncate it */
+
+	/*
+	 * if you can not create or if write to file_to fails,
+	 * exit with code 99
+	 * and
+	 * print Error: Can't write to NAME_OF_THE_FILE,
+	 * followed by a new line, on the POSIX standard error
+	 * where NAME_OF_THE_FILE is the second argument passed to your program
+	 */
+
 	/* Copy content of input file to output file */
+	open(filename, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+
 	ret_in = read(input_fd, &buffer, BUFSIZ);
 	while (ret_in > 0)
 	{
@@ -200,25 +209,7 @@ int main(int argc, char **argv)
 		ret_in = read(input_fd, &buffer, BUFSIZ);
 	}
 	/* Close input and output files */
-	/*
-	 * if you can not close a file descriptor,
-	 * exit with code 100
-	 * and
-	 * print Error: Can't close fd FD_VALUE,
-	 * followed by a new line, on the POSIX standard error
-	 * where FD_VALUE is the value of the file descriptor
-	 */
-	if (close(input_fd) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_fd);
-		exit(100);
-	}
-	if (close(output_fd) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", output_fd);
-		exit(100);
-	}
-
-
+	close(input_fd);
+	close(output_fd);
 	return (0);
 }
