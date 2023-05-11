@@ -94,17 +94,10 @@ int _append_text_to_file(const char *filename, char *text_content)
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int f_hd, len, num_written;
-	FILE *file;
 
 	if (filename == NULL)
 	{
 		return (-1);
-	}
-	file = fopen(filename, "r");
-	if (file != NULL)
-	{
-		fclose(file);
-		return (1);
 	}
 
 	f_hd = open(filename, O_RDWR | O_APPEND);
