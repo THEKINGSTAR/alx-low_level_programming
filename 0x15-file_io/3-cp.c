@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+#define BUFFSIZE  1024
 void append_text_to_file(const char *file_from, const char *file_to);
 void cp(const char *f_from, const char *f_to);
 
@@ -111,9 +112,9 @@ int main(int argc, char **argv)
  */
 void cp(const char *f_f, const char *f_t)
 {
-	int input_fd, output_fd, buf = 1024;
+	int input_fd, output_fd;
 	ssize_t ret_in, ret_out;
-	char *buffer = malloc(sizeof(1024));
+	char buffer[BUFFSIZE];
 
 	/* Open input file for reading */
 	input_fd = open(f_f, O_RDONLY);
@@ -129,8 +130,12 @@ void cp(const char *f_f, const char *f_t)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
 		exit(99);
 	}
-	/* Copy content of input file to output file */
-	ret_in = read(input_fd, buffer, buf);
+	/*
+	 * Copy content of input file to output file
+	 * if you can not create or if write to file_to fails,
+	 * exit with code 99
+	 */
+	ret_in = read(input_fd, buffer, BUFFSIZE);
 	while (ret_in > 0)
 	{
 		ret_out = write(output_fd, buffer, (size_t)ret_in);
@@ -139,22 +144,24 @@ void cp(const char *f_f, const char *f_t)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
 			exit(99);
 		}
-		ret_in = read(input_fd, buffer, buf);
+		ret_in = read(input_fd, buffer, BUFFSIZE);
 	}
-	/*if you can not close a file descriptor,
-	 * exit with code 100 and 
+
+	/*
+	 * if you can not close a file descriptor,
+	 * exit with code 100 and
 	 * print Error: Can't close fd FD_VALUE,
-	 * followed by a new line, 
+	 * followed by a new line,
 	 * on the POSIX standard error
 	 */
 	if (close(input_fd) == -1)
 	{
-		dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", input_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_fd);
 		exit(100);
 	}
 	if (close(output_fd) == -1)
 	{
-		dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", input_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_fd);
 		exit(100);
 	}
 }
