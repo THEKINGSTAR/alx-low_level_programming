@@ -100,28 +100,29 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 	if (text_content == NULL)
 	{
-		if (access(filename, F_OK) == 0)
-		{
-			return (1);
-		}
-		else
-			return (-1);
-		if (access(filename, W_OK) == -1)
-		{
-			return (-1);
-		}
-		fd = open(filename, O_WRONLY | O_APPEND);
-		if (fd == -1)
-		{
-			return (-1);
-		}
-		len = strlen(text_content);
-		num_written = write(fd, text_content, len);
-		if (num_written != len)
-		{
-			close(fd);
-			return (-1);
-		}
+		return (1);
+	}
+	if (access(filename, F_OK) == 0)
+	{
+		return (1);
+	}
+	else
+		return (-1);
+	if (access(filename, W_OK) == -1)
+	{
+		return (-1);
+	}
+	fd = open(filename, O_WRONLY | O_APPEND);
+	if (fd == -1)
+	{
+		return (-1);
+	}
+	len = strlen(text_content);
+	num_written = write(fd, text_content, len);
+	if (num_written != len)
+	{
+		close(fd);
+		return (-1);
 	}
 	return (1);
 }
