@@ -114,7 +114,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 
 	num_written = write(fd, text_content, len);
-	if (num_written != len)
+	if (num_written != len || num_written < 0)
 	{
 		close(fd);
 		return (-1);
