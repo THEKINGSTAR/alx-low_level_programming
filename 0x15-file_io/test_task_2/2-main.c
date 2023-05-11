@@ -20,7 +20,15 @@ int main(int ac, char **av)
 		printf("Usage: %s filename\n", av[0]);
 		return (1);
 	}
+	 
 	res = append_text_to_file(av[1], NULL);
 	printf("%i\n", res);
+	
+
+
+
+	 res = append_text_to_file("textfile_0", "Best School !");
+	 printf("%i\n", res);
+
 	return (0);
 }

@@ -93,12 +93,20 @@ int _append_text_to_file(const char *filename, char *text_content)
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int f_hd, len = 0, num_written;
+	int f_hd, len, num_written;
+	FILE *file;
 
 	if (filename == NULL)
 	{
 		return (-1);
 	}
+	file = fopen(filename, "r");
+	if (file != NULL)
+	{
+		fclose(file);
+		return (1);
+	}
+
 	f_hd = open(filename, O_RDWR | O_APPEND);
 	if (f_hd < 0)
 	{
@@ -109,12 +117,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		close(f_hd);
 		return (1);
 	}
-	while (*text_content)
-	{
-		len++;
-		text_content++;
-	}
-
+	len = strlen(text_content);
 	num_written = write(f_hd, text_content, len);
 	close(f_hd);
 	if (num_written < 0)
