@@ -93,7 +93,7 @@ int _append_text_to_file(const char *filename, char *text_content)
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, len = strlen(text_content), num_written;
+	int f_hd, len = strlen(text_content), num_written;
 
 	if (filename == NULL)
 	{
@@ -103,22 +103,22 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	fd = open(filename, O_RDWR | O_APPEND);
-	if (fd < 0)
+	f_hd = open(filename, O_RDWR | O_APPEND);
+	if (f_hd < 0)
 	{
 		return (-1);
 	}
 	if (text_content == NULL)
 	{
+		close(f_hd);
 		return (1);
 	}
 
-	num_written = write(fd, text_content, len);
-	if (num_written != len || num_written < 0)
+	num_written = write(f_hd, text_content, len);
+	close(f_hd);
+	if (num_written < 0)
 	{
-		close(fd);
 		return (-1);
 	}
-	close(fd);
 	return (1);
 }
