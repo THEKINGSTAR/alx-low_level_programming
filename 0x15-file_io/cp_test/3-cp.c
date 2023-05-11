@@ -111,37 +111,40 @@ int main(int argc, char **argv)
  */
 void cp(const char *f_f, const char *f_t)
 {
-	int input_fd, output_fd, buf = 1024;
-	ssize_t ret_in, ret_out;
-	char *buffer = malloc(sizeof(1024));
+    int input_fd, output_fd;
+    ssize_t ret_in, ret_out;
+    char buffer[BUFSIZ];
 
-	/* Open input file for reading */
-	input_fd = open(f_f, O_RDONLY);
-	if (input_fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_f);
-		exit(98);
-	}
-	/* Open output file for writing and appending */
-	output_fd = open(f_t, O_WRONLY | O_CREAT | O_APPEND, 0644);
-	if (output_fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
-		exit(99);
-	}
-	/* Copy content of input file to output file */
-	ret_in = read(input_fd, buffer, buf);
-	while (ret_in > 0)
-	{
-		ret_out = write(output_fd, buffer, (size_t)ret_in);
-		if (ret_out != ret_in)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
-			exit(99);
-		}
-		ret_in = read(input_fd, buffer, buf);
-	}
-	/* Close input and output files */
-	close(input_fd);
-	close(output_fd);
+    /* Open input file for reading */
+    input_fd = open(f_f, O_RDONLY);
+    if (input_fd == -1)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_f);
+        exit(98);
+    }
+
+    /* Open output file for writing and appending */
+    output_fd = open(f_t, O_WRONLY | O_CREAT | O_APPEND, 0644);
+    if (output_fd == -1)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
+        exit(99);
+    }
+
+    /* Copy content of input file to output file */
+    ret_in = read(input_fd, buffer, BUFSIZ);
+    while (ret_in > 0)
+    {
+        ret_out = write(output_fd, buffer, (size_t)ret_in);
+        if (ret_out != ret_in)
+        {
+            dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
+            exit(99);
+        }
+        ret_in = read(input_fd, buffer, BUFSIZ);
+    }
+
+    /* Close input and output files */
+    close(input_fd);
+    close(output_fd);
 }
