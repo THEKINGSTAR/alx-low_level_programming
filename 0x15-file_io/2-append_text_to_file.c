@@ -93,13 +93,9 @@ int _append_text_to_file(const char *filename, char *text_content)
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int f_hd, len = strlen(text_content), num_written;
+	int f_hd, len = 0, num_written;
 
 	if (filename == NULL)
-	{
-		return (-1);
-	}
-	if (access(filename, W_OK) == -1)
 	{
 		return (-1);
 	}
@@ -112,6 +108,11 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		close(f_hd);
 		return (1);
+	}
+	while (*text_content)
+	{
+		len++;
+		text_content++;
 	}
 
 	num_written = write(f_hd, text_content, len);
