@@ -127,13 +127,13 @@ void cp(const char *f_f, const char *f_t)
 	char buffer[BUFFSIZE];
 
 	input_fd = open(f_f, O_RDONLY);
-	if (input_fd == -1)
+	if (input_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_f);
 		exit(98);	}
 	/* if file_to already exists, truncate it */
 	output_fd = open(f_t, O_RDWR | O_CREAT | O_TRUNC, 0664);
-	if (output_fd == -1)
+	if (output_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
 		close(input_fd);
