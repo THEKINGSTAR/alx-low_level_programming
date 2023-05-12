@@ -28,10 +28,8 @@ void cp(const char *f_from, const char *f_to);
 void append_text_to_file(const char *file_from, const char *file_to)
 {
 	int f_f = open(file_from, O_WRONLY | O_APPEND);
-	int len = strlen(file_from);
+	int len = strlen(file_from), num_written;
 	int f_t = open(file_to, O_RDWR | O_APPEND);
-	int num_written;
-
 	/*
 	*   if file_from does not exist,
 	*   or if you can not read it,
@@ -40,7 +38,8 @@ void append_text_to_file(const char *file_from, const char *file_to)
 	*   followed by a new line, on the POSIX standard error
 	*  - where NAME_OF_THE_FILE is the first argument passed to your program
 	*/
-	if (file_from == NULL || access(file_from, W_OK) == -1)
+	if (file_from == NULL || access(file_from, R_OK) != 0 ||
+			access(file_from, F_OK) != 0)
 	{
 		printf("Can't read from file %s\n", file_from);
 		exit(98);
@@ -86,7 +85,7 @@ int main(int argc, char **argv)
 		 * followed by a new line, on the POSIX standard error
 		 */
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		/*  dprintf(1, "Usage: cp file_from file_to\n"); */
+		/*dprintf(1, "Usage: cp file_from file_to\n");*/
 		exit(97);
 	}
 	/* append_text_to_file(argv[1], argv[2]); */
@@ -110,31 +109,36 @@ int main(int argc, char **argv)
  * Return:function hsa no return valuse but exit error conditions
  *
  */
+/*
+ * Copy content of input file to output file
+ * if you can not create or if write to file_to fails,
+ * exit with code 99
+ *
+ * if you can not close a file descriptor,
+ * exit with code 100 and
+ * print Error: Can't close fd FD_VALUE,
+ * followed by a new line, on the POSIX standard error
+ */
+
 void cp(const char *f_f, const char *f_t)
 {
 	int input_fd, output_fd;
 	ssize_t ret_in, ret_out;
 	char buffer[BUFFSIZE];
 
-	/* Open input file for reading */
 	input_fd = open(f_f, O_RDONLY);
 	if (input_fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_f);
 		exit(98);
 	}
-	/* Open output file for writing and appending */
-	output_fd = open(f_t, O_WRONLY | O_CREAT | O_APPEND, 0644);
+	/* if file_to already exists, truncate it */
+	output_fd = open(f_t, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (output_fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
 		exit(99);
 	}
-	/*
-	 * Copy content of input file to output file
-	 * if you can not create or if write to file_to fails,
-	 * exit with code 99
-	 */
 	ret_in = read(input_fd, buffer, BUFFSIZE);
 	while (ret_in > 0)
 	{
@@ -146,14 +150,6 @@ void cp(const char *f_f, const char *f_t)
 		}
 		ret_in = read(input_fd, buffer, BUFFSIZE);
 	}
-
-	/*
-	 * if you can not close a file descriptor,
-	 * exit with code 100 and
-	 * print Error: Can't close fd FD_VALUE,
-	 * followed by a new line,
-	 * on the POSIX standard error
-	 */
 	if (close(input_fd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_fd);
