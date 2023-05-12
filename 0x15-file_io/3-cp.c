@@ -142,7 +142,7 @@ void cp(const char *f_f, const char *f_t)
 	while (ret_in > 0)
 	{
 		ret_out = write(output_fd, buffer, ret_in);
-		if (ret_out != ret_in)
+		if (ret_out != ret_in || ret_in < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
 			close(input_fd);
