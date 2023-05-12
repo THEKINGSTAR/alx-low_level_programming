@@ -123,7 +123,7 @@ int main(int argc, char **argv)
 void cp(const char *f_f, const char *f_t)
 {
 	int input_fd, output_fd;
-	ssize_t ret_in = 1, ret_out;
+	ssize_t ret_in, ret_out;
 	char buffer[BUFFSIZE];
 
 	input_fd = open(f_f, O_RDONLY);
