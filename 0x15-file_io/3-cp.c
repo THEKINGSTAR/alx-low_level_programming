@@ -132,7 +132,7 @@ void cp(const char *f_f, const char *f_t)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_f);
 		exit(98);	}
 	/* if file_to already exists, truncate it */
-	output_fd = open(f_t, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	output_fd = open(f_t, O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (output_fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
