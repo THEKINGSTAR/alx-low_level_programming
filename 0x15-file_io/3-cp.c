@@ -141,7 +141,7 @@ void cp(const char *f_f, const char *f_t)
 	ret_in = read(input_fd, buffer, BUFFSIZE);
 	while (ret_in > 0)
 	{
-		ret_out = write(output_fd, buffer, (size_t)ret_in);
+		ret_out = write(output_fd, buffer, ret_in);
 		if (ret_out != ret_in)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
