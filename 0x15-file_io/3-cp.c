@@ -123,7 +123,7 @@ int main(int argc, char **argv)
 void cp(const char *f_f, const char *f_t)
 {
 	int input_fd, output_fd;
-	ssize_t ret_in, ret_out;
+	ssize_t ret_in = 1, ret_out;
 	char buffer[BUFFSIZE];
 
 	input_fd = open(f_f, O_RDONLY);
@@ -138,21 +138,20 @@ void cp(const char *f_f, const char *f_t)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
 		close(input_fd);
 		exit(99);	}
-	ret_in = read(input_fd, buffer, BUFFSIZE);
 	while (ret_in > 0)
 	{
+		ret_in = read(input_fd, buffer, BUFFSIZE);
 		if (ret_in < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_f);
 			exit(98);		}
 		ret_out = write(output_fd, buffer, ret_in);
-		if (ret_out != ret_in || ret_out < 0)
+		if (ret_out != ret_in || ret_out != 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_t);
 			close(input_fd);
 			close(output_fd);
 			exit(99);		}
-		ret_in = read(input_fd, buffer, BUFFSIZE);
 	}
 	if (close(input_fd) == -1)
 	{
