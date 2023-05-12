@@ -149,11 +149,11 @@ void cp(const char *f_f, const char *f_t)
 			close(output_fd);
 			exit(99);		}
 		ret_in = read(input_fd, buffer, BUFFSIZE);
-		if (ret_in < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_f);
-			exit(98);		}
 	}
+	if (ret_in < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_f);
+		exit(98);	}
 	if (close(input_fd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_fd);
