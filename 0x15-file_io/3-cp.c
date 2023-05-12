@@ -152,6 +152,7 @@ void cp(const char *f_f, const char *f_t)
 			close(input_fd);
 			close(output_fd);
 			exit(99);		}
+		ret_in = read(input_fd, buffer, BUFFSIZE);
 	}
 	if (close(input_fd) == -1)
 	{
