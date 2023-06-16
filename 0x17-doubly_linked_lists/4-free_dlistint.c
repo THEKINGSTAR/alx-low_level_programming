@@ -6,22 +6,25 @@
  * print_dlistint - print return function
  *
  * @h: pointer to the list
- * Write a function that prints all the elements of a dlistint_t list.
- * Prototype: size_t print_dlistint(const dlistint_t *h);
- * Return: the number of nodes
+ * Write a function that frees a dlistint_t list.
+ * Prototype: void free_dlistint(dlistint_t *head);
+ * Return: function has no return value
  *
  */
-size_t print_dlistint(const dlistint_t *h)
+void free_dlistint(dlistint_t *head)
 {
-	const dlistint_t *current;
-	size_t lenght = 0;
+	dlistint_t *current, *prev_n;
 
-	current = h;
+	prev_n = NULL;
+	current = head;
+
 	while (current != NULL)
 	{
-		lenght++;
-		printf("%d\n", current->n);
+		prev_n = current;
 		current = current->next;
+		prev_n->next = current;
+		prev_n->prev = NULL;
+		free(prev_n);
 	}
-	return (lenght);
+	free(current);
 }
