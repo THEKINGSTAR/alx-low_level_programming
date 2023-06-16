@@ -3,7 +3,7 @@
 /**
  * free_dlistint - free node functions
  *
- * @head: pointer to the list
+ * @had: pointer to the list
  * Write a function that frees a dlistint_t list.
  * Prototype: void free_dlistint(dlistint_t *head);
  * Return: function has no return value
