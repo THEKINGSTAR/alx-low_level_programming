@@ -1,2 +1,2 @@
 #!/bin/bash
-LD_PRELOAD=./100-operations.so /bin/ls
+LD_PRELOAD=./gm 9 8 10 24 84
