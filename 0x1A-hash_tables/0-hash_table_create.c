@@ -1,8 +1,4 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "hash_tables.h"
-
 
 /**
  * hash_table_create - Write a function that creates a hash table.
@@ -14,9 +10,6 @@
  * Return: a pointer to the newly created hash table
  * If something went wrong, your function should return NULL
  */
-
-
-
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *hs_tb;
@@ -27,7 +20,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	hs_tb->size = size;
-	hs_tb->array = malloc(sizeof(hash_node_t) * size);
+	hs_tb->array = (hash_node_t **)malloc(sizeof(hash_node_t *) * size);
 	if (hs_tb->array == NULL)
 	{
 		free(hs_tb);
