@@ -4,4 +4,4 @@ CC := gcc
 SRC := $(wildcard *.c)
 
 school:
-	@echo $(CC) $(SRC) -o school
+	$(CC) $(SRC) -o school
