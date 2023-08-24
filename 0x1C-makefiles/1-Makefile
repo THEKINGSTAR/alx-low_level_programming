@@ -1,0 +1,11 @@
+.PHONY: all
+
+all: school
+
+CC := gcc
+SRC := $(wildcard *.c)
+
+school:
+	@echo $(CC) $(SRC) -o school
+
+
