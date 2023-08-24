@@ -7,5 +7,3 @@ SRC := $(wildcard *.c)
 
 school:
 	@echo $(CC) $(SRC) -o school
-
-
