@@ -33,7 +33,7 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int result = -1, a = 0, n = size;
+	int result = -1, a = 0, n = size - 1;
 	int b = (int)sqrt(n);
 	int s = value, min;
 
@@ -45,22 +45,26 @@ int jump_search(int *array, size_t size, int value)
 	{	printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		a = b;
 		b = b + (int)sqrt(n);
-		min = b + 1;
+		min = (fmin(b, n) - 1);
 		if (a >= n)
 			break;
 	}
 	b = (int)sqrt(n);
 	/*printf("MIN:%i, A:%i, B:%i, FOUND VALUE \n", min, a, b);*/
-	printf("Value found between indexes[%i] and [%i]\n", a - b, a);
-	printf("Value checked array[%i] = [%i]\n", a - b, array[a - b]);
-	while (array[a] < s && a - b + 1 < n)
+	printf("Value checked array[%i] = [%i]\n", a, array[a]);
+	printf("Value found between indexes[%i] and [%i]\n", a, b + a);
+	while (array[a] < s)
 	{
+		printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		a++;
 		/*printf("MIN:%i, A:%i, B:%i, SECOND LOOP \n", min, a, b);*/
-		printf("Value checked array[%i] = [%i]\n", a - b, array[a - b]);
+		min = fmin(b, n);
+		if (array[a] == min)
+			break;
 	}
 	if (array[a] == s)
 	{	/*printf("MIN:%i, A:%i, B:%i, FOUND VALUE \n", min, a, b);*/
+		printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		result = a;
 		return (result);
 	}
