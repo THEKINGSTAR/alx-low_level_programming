@@ -33,37 +33,58 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int result = -1, a = 0, n = size;
-	int b = (int)sqrt(n);
-	int s = value, min;
+	int result = -1, a = 0, n = (int)size;
+	int n_sqrt = (int)sqrt(n), n_a;
+	int b = n_sqrt, s = value, min = 0;
 
 	if (array == NULL)
-	{	return (result);	}
-	min = (fmin(b, n) - 1);
-	/*printf("MIN:%i, A:%i, B:%i,VALUE:%i FOUND VALUE\n", min, a, b, s);*/
-	while (array[min] < s)
+		return (result);
+	min = (fmin(b, n));
+	while (array[min - 1] < s)
 	{	printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		a = b;
-		b = b + (int)sqrt(n);
-		min = b + 1;
+		b = b + n_sqrt;
 		if (a >= n)
+		{
 			break;
-	}
-	b = (int)sqrt(n);
-	/*printf("MIN:%i, A:%i, B:%i, FOUND VALUE \n", min, a, b);*/
-	printf("Value found between indexes[%i] and [%i]\n", a - b, a);
-	printf("Value checked array[%i] = [%i]\n", a - b, array[a - b]);
-	while (array[a] < s && a - b + 1 < n)
-	{
+		}
+		min = (fmin(b, n));	}
+	if (array[a] >= s)
+	{	printf("Value found between indexes[%i] and [%i]\n", a - n_sqrt, a);
+		n_a = a - n_sqrt;	}
+	else if (array[0] <= s && array[n_sqrt] >= s)
+	{	printf("Value found between indexes[%i] and [%i]\n", 0, n_sqrt);
+		n_a = 0;	}
+	else
+	{	printf("Value found between indexes[%i] and [%i]\n", a - n_sqrt, a);
+		n_a = a - n_sqrt;	}
+	a = n_a;
+	while (array[a] < s && a < n)
+	{	printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		a++;
-		/*printf("MIN:%i, A:%i, B:%i, SECOND LOOP \n", min, a, b);*/
-		printf("Value checked array[%i] = [%i]\n", a - b, array[a - b]);
-	}
+		min = fmin(b, n);
+		if (array[a] == min)
+			break;	}
 	if (array[a] == s)
-	{	/*printf("MIN:%i, A:%i, B:%i, FOUND VALUE \n", min, a, b);*/
+	{	printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		result = a;
-		return (result);
-	}
-	return (result);
-}
+		return (result);	}
+	return (result);	}
 
+	/*
+	 * USED PRINT STATMENTS TO CHECK THE LOOP
+	 * printf("MIN:%i, A:%i, B:%i, FOUND VALUE \n", min, a, b);
+	 * printf("Value found between indexes[%i] and [%i]\n", b, a);
+	 * printf("Value checked array[%i] = [%i]\n", a, array[a]);
+	 * printf("Value found between indexes[%i] and [%i]\n", a, b + a);
+	 *
+	 * printf("Value found between indexes[%i] and [%i]\n-array[a] >= s \n"
+	 * ,a - n_sqrt, a);
+	 *
+	 * printf("Value found between indexes[%i] and [%i]\n
+	 * -array[0] <= s && array[n_sqrt] >= s\n", 0, n_sqrt);
+	 *
+	 *  printf("Value found between indexes[%i] and [%i]\n -else  \n"
+	 *  , a - n_sqrt, a);
+	 *
+	 */

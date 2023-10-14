@@ -59,7 +59,7 @@ int jump_search(int *array, size_t size, int value)
 	{	printf("Value found between indexes[%i] and [%i]\n", a - n_sqrt, a);
 		n_a = a - n_sqrt;	}
 	a = n_a;
-	while (array[a] < s)
+	while (array[a] < s && a < n)
 	{	printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		a++;
 		min = fmin(b, n);
