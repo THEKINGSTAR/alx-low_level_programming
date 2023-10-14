@@ -33,37 +33,51 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int result = -1, a = 0, n = size - 1;
-	int b = (int)sqrt(n);
-	int s = value, min;
+	int result = -1, a = 0, n = (int)size;
+	int n_sqrt = (int)sqrt(n), n_a;
+	int b = n_sqrt, s = value, min = 0;
 
 	if (array == NULL)
-	{	return (result);	}
-	min = (fmin(b, n) - 1);
-	/*printf("MIN:%i, A:%i, B:%i,VALUE:%i FOUND VALUE\n", min, a, b, s);*/
-	while (array[min] < s)
+	{
+		return (result);	
+	}
+	min = (fmin(b, n));
+	while (array[min - 1] < s)
 	{	printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		a = b;
-		b = b + (int)sqrt(n);
-		min = (fmin(b, n) - 1);
+		b = b + n_sqrt;
 		if (a >= n)
+		{
 			break;
+		}
+		min = (fmin(b, n));
 	}
-	b = (int)sqrt(n);
-	/*printf("MIN:%i, A:%i, B:%i, FOUND VALUE \n", min, a, b);*/
-	printf("Value checked array[%i] = [%i]\n", a, array[a]);
-	printf("Value found between indexes[%i] and [%i]\n", a, b + a);
+	if (array[a] >= s)
+	{
+		printf("Value found between indexes[%i] and [%i]\n - array[a] >= s \n", a - n_sqrt, a);
+		n_a = a - n_sqrt;
+	}
+	else if (array[0] <= s && array[n_sqrt] >= s)
+	{
+		printf("Value found between indexes[%i] and [%i]\n - array[a] >= s \n", 0, n_sqrt);
+		n_a = 0;
+	}
+	else
+	{
+		printf("Value found between indexes[%i] and [%i]\n -  \n", a - n_sqrt, a);
+		n_a = a - n_sqrt;
+	}
+	a = n_a;
 	while (array[a] < s)
 	{
 		printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		a++;
-		/*printf("MIN:%i, A:%i, B:%i, SECOND LOOP \n", min, a, b);*/
 		min = fmin(b, n);
 		if (array[a] == min)
 			break;
 	}
 	if (array[a] == s)
-	{	/*printf("MIN:%i, A:%i, B:%i, FOUND VALUE \n", min, a, b);*/
+	{
 		printf("Value checked array[%i] = [%i]\n", a, array[a]);
 		result = a;
 		return (result);
@@ -71,3 +85,9 @@ int jump_search(int *array, size_t size, int value)
 	return (result);
 }
 
+	/*
+	printf("MIN:%i, A:%i, B:%i, FOUND VALUE \n", min, a, b);
+	printf("Value found between indexes[%i] and [%i]\n", b, a);
+	printf("Value checked array[%i] = [%i]\n", a, array[a]);
+	printf("Value found between indexes[%i] and [%i]\n", a, b + a);
+	*/
