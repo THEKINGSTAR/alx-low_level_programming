@@ -33,8 +33,8 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int result = -1, a = 0, n = (int)size;
-	int n_sqrt = (int)sqrt(n), n_a;
+	int result = -1, a = 0, n = size;
+	int n_sqrt = sqrt(n), n_a;
 	int b = n_sqrt, s = value, min = 0;
 
 	if (array == NULL)
@@ -49,12 +49,15 @@ int jump_search(int *array, size_t size, int value)
 			break;
 		}
 		min = (fmin(b, n));	}
-	if (array[a] >= s)
-	{	printf("Value found between indexes[%i] and [%i]\n", a - n_sqrt, a);
-		n_a = a - n_sqrt;	}
-	else if (array[0] <= s && array[n_sqrt] >= s)
+	if (array[0] <= s && array[n_sqrt] >= s)
 	{	printf("Value found between indexes[%i] and [%i]\n", 0, n_sqrt);
 		n_a = 0;	}
+	else if (array[a] <= s && array[a + n_sqrt] >= s)
+	{
+		printf("Value checked array[%i] = [%i]\n", a, array[a]);
+		printf("Value found between indexes[%i] and [%i]\n", a, a + n_sqrt);
+		n_a = a;
+	}
 	else
 	{	printf("Value found between indexes[%i] and [%i]\n", a - n_sqrt, a);
 		n_a = a - n_sqrt;	}
