@@ -1,33 +1,42 @@
-# C 
-![alt text](https://github.com/THEKINGSTAR/alx-low_level_programming/blob/main/c.jpg?raw=true)
+``` ALX_SE ``` 
+``` low_level ```
 
-## General
+# ```C``` 
 
-* Why C programming is awesome (don’t forget to tweet today, with the hashtag #cisfun :))
+<p align="center">
+  <img src="https://github.com/THEKINGSTAR/alx-low_level_programming/blob/main/c.jpg?raw=true" alt="Your Image Description" width="600"/>
+</p>
+
+
+## ```General```
+
+* Why C programming is awesome (don’t forget to tweet today, with the hashtag ```#cisfun``` :))
 * Who invented C
 * Who are Dennis Ritchie, Brian Kernighan and Linus Torvalds
-* What happens when you type gcc main.c
+* What happens when you type ```gcc main.c```
 * What is an entry point
-* What is main
+* What is ```main```
 * How to print text using printf, puts and putchar
 * How to get the size of a specific type using the unary operator sizeof
-* How to compile using gcc
-* What is the default program name when compiling with gcc
-* What is the official Holberton C coding style and how to check your code with betty-style
+* How to compile using ```gcc```
+* What is the default program name when compiling with ```gcc```
+* What is the official Holberton C coding style and how to check your code with ```betty-style```
 * How to find the right header to include in your source code when using a standard library function
 * How does the main function influence the return value of the program
 
-## Requirements C
+## ```Requirements``` ```C```
 
-* Allowed editors: vi, vim, emacs
-* All your files will be compiled on Ubuntu 14.04 LTS using gcc 4.8.4
+* Allowed editors: ```vi```, ```vim```, ```emacs```
+* All your files will be compiled on ```Ubuntu 14.04 LTS``` using ```gcc 4.8.4```
 * All your files should end with a new line
-* A README.md file at the root of the holbertonschool-low_level_programming repo, containing a description of the repository
-* A README.md file, at the root of the folder of this project, containing a description of the project
+* A README.md file at the root of the ```holbertonschool-low_level_programming``` repo, containing a description of the repository
+* A ```README.md``` file, at the root of the folder of this project, containing a description of the project
 * There should be no errors and no warnings during compilation
-* You are not allowed to use system
-* Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-# --------------------------------------------------------------------
+* You are not allowed to use ```system```
+* Your code should use the Betty style. It will be checked using ```betty-style.pl``` and ```betty-doc.pl```
+
+---
+
 * [0x00. C - Hello, World](./0x00-hello_world)
 * [0x01. C - Variables, if, else, while](./0x01-variables_if_else_while)
 * [0x02. C - Functions, nested loops](./0x02-functions_nested_loops)
@@ -50,4 +59,11 @@
 * [0x13-more_singly_linked_lists](./0x13-more_singly_linked_lists)
 * [0x14-bit_manipulation](0x14-bit_manipulation)
 * [0x15-file_io](0x15-file_io)
-# -----------------------------------------------------------------------
+* [0x17-doubly_linked_lists](0x17-doubly_linked_lists/)
+* [0x18-dynamic_libraries](0x18-dynamic_libraries/)
+* [0x1A-hash_tables](0x1A-hash_tables/)
+* [0x1C-makefiles](0x1C-makefiles/)
+* [0x1E-search_algorithms](0x1E-search_algorithms/)
+---
+
+## ```Copyright © 2024 ALX, All rights reserved.```
